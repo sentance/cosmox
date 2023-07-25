@@ -1,5 +1,6 @@
 import React from "react";
-import "./App.css";
+import "./assets/css/style.css";
+import "./assets/css/animate.css";
 import MobileMenu from "./components/MobileMenu";
 import Menu from "./components/Menu";
 import FirstScreen from "./components/FirstScreen";
