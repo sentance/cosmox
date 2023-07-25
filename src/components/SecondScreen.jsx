@@ -26,7 +26,7 @@ const SecondScreen = () => {
           <div className="tabs__content">
             <div className="item">
               <div className="market">
-                <img src="./assets/img/btc.svg" alt="" />
+                <img src="../assets/img/btc.svg" alt="" />
                 <span>BTC-USD</span>
               </div>
               <div className="pv">
@@ -48,7 +48,7 @@ const SecondScreen = () => {
             </div>
             <div className="item">
               <div className="market">
-                <img src="./assets/img/eth.svg" alt="" />
+                <img src="../assets/img/eth.svg" alt="" />
                 <span>ETH-USD</span>
               </div>
               <div className="pv">
@@ -70,7 +70,7 @@ const SecondScreen = () => {
             </div>
             <div className="item">
               <div className="market">
-                <img src="./assets/img/ada.svg" alt="" />
+                <img src="../assets/img/ada.svg" alt="" />
                 <span>ADA-USD</span>
               </div>
               <div className="pv">
@@ -94,7 +94,7 @@ const SecondScreen = () => {
           <div className="tabs__content">
             <div className="item">
               <div className="market">
-                <img src="./assets/img/btc.svg" alt="" />
+                <img src="../assets/img/btc.svg" alt="" />
                 <span>BTC-USD</span>
               </div>
               <div className="pv">
@@ -116,7 +116,7 @@ const SecondScreen = () => {
             </div>
             <div className="item">
               <div className="market">
-                <img src="./assets/img/eth.svg" alt="" />
+                <img src="../assets/img/eth.svg" alt="" />
                 <span>ETH-USD</span>
               </div>
               <div className="pv">
@@ -138,7 +138,7 @@ const SecondScreen = () => {
             </div>
             <div className="item">
               <div className="market">
-                <img src="./assets/img/ada.svg" alt="" />
+                <img src="../assets/img/ada.svg" alt="" />
                 <span>ADA-USD</span>
               </div>
               <div className="pv">
@@ -162,7 +162,7 @@ const SecondScreen = () => {
           <div className="tabs__content">
             <div className="item">
               <div className="market">
-                <img src="./assets/img/btc.svg" alt="" />
+                <img src="../assets/img/btc.svg" alt="" />
                 <span>BTC-USD</span>
               </div>
               <div className="pv">
@@ -184,7 +184,7 @@ const SecondScreen = () => {
             </div>
             <div className="item">
               <div className="market">
-                <img src="./assets/img/eth.svg" alt="" />
+                <img src="../assets/img/eth.svg" alt="" />
                 <span>ETH-USD</span>
               </div>
               <div className="pv">
@@ -206,7 +206,7 @@ const SecondScreen = () => {
             </div>
             <div className="item">
               <div className="market">
-                <img src="./assets/img/ada.svg" alt="" />
+                <img src="../assets/img/ada.svg" alt="" />
                 <span>ADA-USD</span>
               </div>
               <div className="pv">
@@ -230,7 +230,7 @@ const SecondScreen = () => {
           <div className="tabs__content">
             <div className="item">
               <div className="market">
-                <img src="./assets/img/btc.svg" alt="" />
+                <img src="../assets/img/btc.svg" alt="" />
                 <span>BTC-USD</span>
               </div>
               <div className="pv">
@@ -252,7 +252,7 @@ const SecondScreen = () => {
             </div>
             <div className="item">
               <div className="market">
-                <img src="./assets/img/eth.svg" alt="" />
+                <img src="../assets/img/eth.svg" alt="" />
                 <span>ETH-USD</span>
               </div>
               <div className="pv">
@@ -274,7 +274,7 @@ const SecondScreen = () => {
             </div>
             <div className="item">
               <div className="market">
-                <img src="./assets/img/ada.svg" alt="" />
+                <img src="../assets/img/ada.svg" alt="" />
                 <span>ADA-USD</span>
               </div>
               <div className="pv">
