@@ -1,5 +1,5 @@
 import React from "react";
-
+import ArrowDown from "../assets/img/arrows-down";
 const FirstScreen = () => {
   return (
     <section className="sec1">
@@ -18,7 +18,7 @@ const FirstScreen = () => {
           </form>
         </div>
         <a href="#">
-          <img src="./assets/img/arrows-down.svg" alt="" />
+          <ArrowDown />
         </a>
       </div>
     </section>
