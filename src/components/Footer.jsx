@@ -1,10 +1,13 @@
+import React from "react";
+import { Twitter, Logo, Instagram, Telegram } from "../assets/img/Images";
+
 const Footer = () => {
   return (
     <footer>
       <div className="container">
         <div className="f1">
           <a href="#" className="logo">
-            <img src="./assets/img/logo.svg" alt="" />
+            <Logo />
           </a>
           <span>CosmoX</span>
           <a href="mailto:business@cosmox.io" className="mail">
@@ -12,13 +15,13 @@ const Footer = () => {
           </a>
           <div className="icons">
             <div className="icon">
-              <img src="./assets/img/twitter.svg" alt="" />
+              <Twitter />
             </div>
             <div className="icon">
-              <img src="./assets/img/instagram.svg" alt="" />
+              <Instagram />
             </div>
             <div className="icon">
-              <img src="./assets/img/telegram.svg" alt="" />
+              <Telegram />
             </div>
           </div>
           <p>© 2023 cosmox - All Rights Reserved.</p>

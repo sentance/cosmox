@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { TextField, FormHelperText } from "@mui/material";
 import styled from "@emotion/styled";
+import { Apple, Gray, Pp, Stripe } from "../assets/img/Images";
 
 const CssTextField = styled(TextField)({
   "& label.Mui-focused": {
@@ -95,16 +96,16 @@ const SectionFour = () => {
           </p>
           <div className="items">
             <div className="item">
-              <img src="./assets/img/apple.svg" alt="" />
+              <Apple />
             </div>
             <div className="item">
-              <img src="./assets/img/stripe.svg" alt="" />
+              <Stripe />
             </div>
             <div className="item">
-              <img src="./assets/img/gpay.svg" alt="" />
+              <Gray />
             </div>
             <div className="item">
-              <img src="./assets/img/pp.svg" alt="" />
+              <Pp />
             </div>
           </div>
         </div>

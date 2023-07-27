@@ -1,4 +1,5 @@
 import React from "react";
+import { Ada, Btc, Eth } from "../../assets/img/Images";
 
 const Tabs = ({ activeTab }) => {
   return (
@@ -7,7 +8,7 @@ const Tabs = ({ activeTab }) => {
         {" "}
         <div className="item">
           <div className="market">
-            <img src="../assets/img/btc.svg" alt="" />
+            <Btc />
             <span>BTC-USD</span>
           </div>
           <div className="pv">
@@ -29,7 +30,7 @@ const Tabs = ({ activeTab }) => {
         </div>
         <div className="item">
           <div className="market">
-            <img src="../assets/img/eth.svg" alt="" />
+            <Eth />
             <span>ETH-USD</span>
           </div>
           <div className="pv">
@@ -51,7 +52,7 @@ const Tabs = ({ activeTab }) => {
         </div>
         <div className="item">
           <div className="market">
-            <img src="../assets/img/ada.svg" alt="" />
+            <Ada />
             <span>ADA-USD</span>
           </div>
           <div className="pv">
@@ -76,7 +77,7 @@ const Tabs = ({ activeTab }) => {
         {" "}
         <div className="item">
           <div className="market">
-            <img src="../assets/img/btc.svg" alt="" />
+            <Btc />
             <span>BTC-USD</span>
           </div>
           <div className="pv">
@@ -98,7 +99,7 @@ const Tabs = ({ activeTab }) => {
         </div>
         <div className="item">
           <div className="market">
-            <img src="../assets/img/eth.svg" alt="" />
+            <Eth />
             <span>ETH-USD</span>
           </div>
           <div className="pv">
@@ -120,7 +121,7 @@ const Tabs = ({ activeTab }) => {
         </div>
         <div className="item">
           <div className="market">
-            <img src="../assets/img/ada.svg" alt="" />
+            <Ada />
             <span>ADA-USD</span>
           </div>
           <div className="pv">
@@ -145,7 +146,7 @@ const Tabs = ({ activeTab }) => {
         {" "}
         <div className="item">
           <div className="market">
-            <img src="../assets/img/btc.svg" alt="" />
+            <Btc />
             <span>BTC-USD</span>
           </div>
           <div className="pv">
@@ -167,7 +168,7 @@ const Tabs = ({ activeTab }) => {
         </div>
         <div className="item">
           <div className="market">
-            <img src="../assets/img/eth.svg" alt="" />
+            <Eth />
             <span>ETH-USD</span>
           </div>
           <div className="pv">
@@ -189,7 +190,7 @@ const Tabs = ({ activeTab }) => {
         </div>
         <div className="item">
           <div className="market">
-            <img src="../assets/img/ada.svg" alt="" />
+            <Ada />
             <span>ADA-USD</span>
           </div>
           <div className="pv">
@@ -214,7 +215,7 @@ const Tabs = ({ activeTab }) => {
         {" "}
         <div className="item">
           <div className="market">
-            <img src="../assets/img/btc.svg" alt="" />
+            <Btc />
             <span>BTC-USD</span>
           </div>
           <div className="pv">
@@ -236,7 +237,7 @@ const Tabs = ({ activeTab }) => {
         </div>
         <div className="item">
           <div className="market">
-            <img src="../assets/img/eth.svg" alt="" />
+            <Eth />
             <span>ETH-USD</span>
           </div>
           <div className="pv">
@@ -258,7 +259,7 @@ const Tabs = ({ activeTab }) => {
         </div>
         <div className="item">
           <div className="market">
-            <img src="../assets/img/ada.svg" alt="" />
+            <Ada />
             <span>ADA-USD</span>
           </div>
           <div className="pv">

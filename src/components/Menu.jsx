@@ -1,4 +1,5 @@
 import React from "react";
+import { BritishFlag, Logo } from "../assets/img/Images";
 
 const Menu = () => {
   return (
@@ -6,7 +7,7 @@ const Menu = () => {
       <div className="block df jb">
         <div className="left">
           <a href="" className="logo">
-            <img src="./assets/img/logo.svg" alt="" />
+            <Logo />
           </a>
           <nav>
             <ul>
@@ -43,7 +44,7 @@ const Menu = () => {
           <div className="button-dropdown">
             <button className="dropdown-toggle">
               English
-              <img src="./assets/img/british-flag.svg" alt="" />
+              <BritishFlag />
               <svg xmlns="http://www.w3.org/2000/svg" width={9} height={8} viewBox="0 0 9 8" fill="none">
                 <g clipPath="url(#clip0_1_833)">
                   <path
@@ -60,7 +61,7 @@ const Menu = () => {
             </button>
             <ul className="dropdown-menu" style={{ display: "none" }}>
               <li>
-                <a href="#">Ukraine</a>
+                <a href="#">PL</a>
               </li>
             </ul>
           </div>
@@ -72,7 +73,6 @@ const Menu = () => {
           </div>
         </div>
         <div className="menu">
-          {/* Кнопка Мобильного Меню */}
           <button id="burger-menu">
             <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none">
               <path

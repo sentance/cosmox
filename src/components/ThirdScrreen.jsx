@@ -1,4 +1,5 @@
 import React from "react";
+import { I3, I2, I1 } from "../assets/img/Images";
 
 const ThirdScreen = () => {
   return (
@@ -10,21 +11,21 @@ const ThirdScreen = () => {
         </div>
         <div className="items">
           <div className="item">
-            <img src="./assets/img/i1.svg" alt="" />
+            <I1 />
             <div className="text">
               <span>Chart System</span>
               <p>A Wide Array Od Crypto Trading And Management Services to Satisfy Diverse Trading Needs</p>
             </div>
           </div>
           <div className="item">
-            <img src="./assets/img/i2.svg" alt="" />
+            <I2 />
             <div className="text">
               <span>Trading platform</span>
               <p>A Wide Array Od Crypto Trading And Management Services to Satisfy Diverse Trading Needs</p>
             </div>
           </div>
           <div className="item">
-            <img src="./assets/img/i3.svg" alt="" />
+            <I3 />
             <div className="text">
               <span>Trading platform</span>
               <p>A Wide Array Od Crypto Trading And Management Services to Satisfy Diverse Trading Needs</p>
