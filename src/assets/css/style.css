@@ -1373,6 +1373,18 @@ header .container .block .right .join a:hover {
   /* Add a slight change in box-shadow on hover */
   box-shadow: 1px 1px 1px 9.955300331115723px rgba(122, 164, 132, 0.05);
 }
+.carousel-container {
+  max-width: 300px; /* Adjust the width as per your design */
+  margin: 0 auto;
+}
+
+.carousel-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px; /* Add some border-radius for a nicer look */
+  font-size: 32px; /* Adjust the font size as needed */
+}
 .sec1 {
   background-image: linear-gradient(180deg,#1d1d1d 0%,#121212 69.79%);
   background: url(../img/bg.jpg);
@@ -1839,6 +1851,7 @@ header .container .block .right .join a:hover {
 .sec4 .container .left .items {
   display: flex;
   align-items: center;
+  max-width: 77%;
   gap: 24px;
   padding: 18px 50px;
   border-radius: 1000px;

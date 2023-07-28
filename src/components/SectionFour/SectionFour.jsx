@@ -1,12 +1,12 @@
 import React, { useState } from "react";
+import { Carousel } from "react-responsive-carousel";
 import { Apple, Gray, Pp, Stripe } from "../../assets/img/Images";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { CssTextField, CssTextArea, WhiteInputLabel } from "./SectionFourStyles";
-import Slider from "rc-slider";
-import "rc-slider/assets/index.css";
 import ReCAPTCHA from "react-google-recaptcha";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const SectionFour = () => {
   const [formData, setFormData] = useState({
@@ -53,7 +53,7 @@ const SectionFour = () => {
     }));
   };
 
-  const sliderImages = [
+  const carouselImages = [
     { id: 1, icon: <Apple /> },
     { id: 2, icon: <Stripe /> },
     { id: 3, icon: <Gray /> },
@@ -61,13 +61,13 @@ const SectionFour = () => {
   ];
 
   const sliderSettings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-    autoplay: true,
-    autoplaySpeed: 2000,
+    showArrows: false, // Hide navigation arrows
+    showStatus: false, // Hide the current slide status (e.g., 1/4)
+    showIndicators: false, // Hide the dots at the bottom of the carousel
+    showThumbs: false, // Hide the thumbnail images
+    infiniteLoop: true,
+    autoPlay: true,
+    interval: 2000,
   };
 
   return (
@@ -81,13 +81,13 @@ const SectionFour = () => {
             users. Here is a list of the payment methods we support.
           </p>
           <div className="items">
-            <Slider {...sliderSettings}>
-              {sliderImages.map((item) => (
-                <div key={item.id} className="item">
+            <Carousel {...sliderSettings}>
+              {carouselImages.map((item) => (
+                <div key={item.id} className="carousel-item">
                   {item.icon}
                 </div>
               ))}
-            </Slider>
+            </Carousel>
           </div>
         </div>
         <div className="right">
