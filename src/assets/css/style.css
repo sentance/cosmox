@@ -1810,6 +1810,15 @@ header .container .block .right .join a:hover {
   /* Add a slight change in box-shadow on hover */
   box-shadow: 0px 0px 0px 9.955300331115723px rgba(122, 164, 132, 0.05);
 }
+.arrow {
+  width: 50px; /* Adjust the width as needed */
+  height: auto;
+  transition: transform 0.3s ease; /* Add a smooth transition effect */
+}
+.arrow:hover {
+  transform: translateY(20px); /* Move the arrow down by 20px on hover */
+}
+
 .sec4 {
   background: linear-gradient(180deg,#1c1c1c 0%,#121212 69.79%);
   z-index: 3;

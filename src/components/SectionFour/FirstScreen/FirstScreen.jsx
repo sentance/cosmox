@@ -29,6 +29,16 @@ const FirstScreen = () => {
       toast.error(error.response && error.response.data.message ? error.response.data.message : error.message);
     }
   };
+
+  const handleArrowClick = (event) => {
+    event.preventDefault();
+    // Scroll to the section you want to show after clicking the arrow
+    const targetElement = document.getElementById("benefits");
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="sec1">
       <div className="container">
@@ -54,7 +64,7 @@ const FirstScreen = () => {
             </button>
           </form>
         </div>
-        <a href="#">
+        <a href="#" onClick={handleArrowClick} className="arrow">
           <ArrowDown />
         </a>
       </div>

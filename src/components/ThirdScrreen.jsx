@@ -3,7 +3,7 @@ import { I3, I2, I1 } from "../assets/img/Images";
 
 const ThirdScreen = () => {
   return (
-    <section className="sec3">
+    <section className="sec3" id="benefits">
       <div className="container">
         <div className="title">
           <h2>BENEFITS</h2>
