@@ -1,6 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const mg = require("mailgun-js");
+const axios = require("axios"); // Add this line to import axios
 
 dotenv.config();
 
@@ -14,8 +15,36 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.post("/api/email", (req, res) => {
-  const { email, name, lastName, phone, message } = req.body;
+// Function to verify reCAPTCHA response
+const verifyCaptcha = async (captchaResponse) => {
+  const secretKey = "6LfMRWEnAAAAALFyDlGueV60_2gdAf-EW7Uk0E6U"; // Replace with your secret key
+  const url = "https://www.google.com/recaptcha/api/siteverify";
+
+  try {
+    const response = await axios.post(url, {
+      secret: secretKey,
+      response: captchaResponse,
+    });
+
+    const { success } = response.data;
+    return success;
+  } catch (error) {
+    console.error("Error verifying captcha:", error);
+    return false;
+  }
+};
+
+app.post("/api/email", async (req, res) => {
+  const { email, name, lastName, phone, message, captchaResponse } = req.body; // Include captchaResponse in the request body
+
+  // Verify the captcha response
+  const isCaptchaValid = await verifyCaptcha(captchaResponse);
+
+  if (!isCaptchaValid) {
+    res.status(400).send({ message: "Invalid captcha response" });
+    return;
+  }
+
   const emailMessage = `
     New user
     ${name ? `Name: ${name}` : ""}

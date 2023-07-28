@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { CssTextField, CssTextArea, WhiteInputLabel } from "./SectionFourStyles";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const SectionFour = () => {
   const [formData, setFormData] = useState({
@@ -14,6 +15,7 @@ const SectionFour = () => {
     email: "",
     phone: "",
     message: "",
+    "g-recaptcha-response": "", // Add this key to the state
   });
 
   const handleChange = (event) => {
@@ -27,6 +29,13 @@ const SectionFour = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    // Verify captcha
+    const captchaValue = formData["g-recaptcha-response"];
+    if (!captchaValue) {
+      toast.error("Please complete the reCAPTCHA challenge.");
+      return;
+    }
+
     // Send the data to Mailgun using an HTTP POST request
     try {
       const { data } = await axios.post(`/api/email`, formData);
@@ -35,6 +44,13 @@ const SectionFour = () => {
     } catch (error) {
       toast.error(error.response && error.response.data.message ? error.response.data.message : error.message);
     }
+  };
+
+  const handleCaptchaChange = (value) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      "g-recaptcha-response": value,
+    }));
   };
 
   const sliderImages = [
@@ -125,6 +141,7 @@ const SectionFour = () => {
                 name="message"
                 required
               />
+              <ReCAPTCHA sitekey="6LfMRWEnAAAAACvb5qhLIooZN6GxcXnXNhNkeJS0" onChange={handleCaptchaChange} />
             </div>
             <div className="text">
               <p>This site is protected by reCAPTCHA</p>
