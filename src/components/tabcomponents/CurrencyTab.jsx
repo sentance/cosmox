@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import TabsActiveCheck from "./TabsActiveCheck";
 import Tabs from "./Tabs";
 
-const currencyList = ["BTC", "ETH", "ADA"];
+const currencyList = ["All", "BTC", "ETH", "ADA"];
 
 const CurrencyTab = () => {
   const [activeTab, setActiveTab] = useState(0);

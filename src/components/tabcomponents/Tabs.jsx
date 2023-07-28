@@ -31,46 +31,90 @@ const Tabs = ({ activeTab }) => {
     {
       currency: "bitcoin",
       icon: <Btc />,
+      name: "BTC",
     },
     {
       currency: "ethereum",
       icon: <Eth />,
+      name: "ETH",
     },
     {
       currency: "cardano",
       icon: <Ada />,
+      name: "ADA",
     },
   ];
 
+  // Filter data based on the activeTab value
+  const filteredData =
+    activeTab === 0 ? cryptosData : cryptosData.filter((crypto) => crypto.id === tabsData[activeTab - 1]?.currency);
+
   return (
     <>
-      {tabsData.map((tab, index) => (
-        <div key={index} className={`tabs__content ${activeTab === index ? "active" : ""}`}>
-          <div className="item">
+      <div className={`tabs__content ${activeTab === 0 ? "active" : ""}`}>
+        {cryptosData.map((cryptoData) => (
+          <div key={cryptoData.id} className="item">
             <div className="market">
-              {tab.icon}
-              <span>{`${tab.currency}-USD`}</span>
+              {/* Determine the correct icon based on the currency */}
+              {tabsData.find((tab) => tab.currency === cryptoData.id)?.icon}
+              <span>{`${cryptoData.id.toUpperCase()}-USD`}</span>
             </div>
             <div className="pv">
               <div className="price">
-                {cryptosData[index]?.current_price.toFixed(2)}
+                {cryptoData.current_price.toFixed(2)}
                 <span>USD</span>
               </div>
               <div className="volume">
-                {cryptosData[index]?.total_volume.toLocaleString()}
+                {cryptoData.total_volume.toLocaleString()}
                 <span>USD</span>
               </div>
             </div>
             <div
               className="change"
-              style={{ color: cryptosData[index]?.price_change_percentage_24h >= 0 ? "#0EFF43" : "#FF0331" }}
+              style={{
+                color: cryptoData.price_change_percentage_24h >= 0 ? "#0EFF43" : "#FF0331",
+              }}
             >
-              {cryptosData[index]?.price_change_percentage_24h.toFixed(2)}% <span>(24H CHANGE)</span>
+              {cryptoData.price_change_percentage_24h.toFixed(2)}% <span>(24H CHANGE)</span>
             </div>
             <div className="trade">
               <a href="#">TRADE</a>
             </div>
           </div>
+        ))}
+      </div>
+      {/* Render the content for other tabs based on the activeTab value */}
+      {tabsData.map((tab, index) => (
+        <div key={index + 1} className={`tabs__content ${activeTab === index + 1 ? "active" : ""}`}>
+          {filteredData.map((cryptoData) => (
+            <div key={cryptoData.id} className="item">
+              <div className="market">
+                {tab.icon}
+                <span>{`${tab.name}-USD`}</span>
+              </div>
+              <div className="pv">
+                <div className="price">
+                  {cryptoData.current_price.toFixed(2)}
+                  <span>USD</span>
+                </div>
+                <div className="volume">
+                  {cryptoData.total_volume.toLocaleString()}
+                  <span>USD</span>
+                </div>
+              </div>
+              <div
+                className="change"
+                style={{
+                  color: cryptoData.price_change_percentage_24h >= 0 ? "#0EFF43" : "#FF0331",
+                }}
+              >
+                {cryptoData.price_change_percentage_24h.toFixed(2)}% <span>(24H CHANGE)</span>
+              </div>
+              <div className="trade">
+                <a href="#">TRADE</a>
+              </div>
+            </div>
+          ))}
         </div>
       ))}
     </>
