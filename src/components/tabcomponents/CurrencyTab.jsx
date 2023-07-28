@@ -6,9 +6,14 @@ const currencyList = ["All", "BTC", "ETH", "ADA"];
 
 const CurrencyTab = () => {
   const [activeTab, setActiveTab] = useState(0);
+  const [filterText, setFilterText] = useState(""); // New state for filter text
 
   const handleTabClick = (index) => {
     setActiveTab(index);
+  };
+
+  const handleFilterChange = (event) => {
+    setFilterText(event.target.value);
   };
 
   return (
@@ -26,9 +31,12 @@ const CurrencyTab = () => {
                 />
               ))}
             </ul>
-            <form>
-              <input type="text" placeholder="Filter..." />
-            </form>
+            {/* Conditionally render the filter input only when the "All" tab is active */}
+            {activeTab === 0 && (
+              <form>
+                <input type="text" placeholder="Filter..." value={filterText} onChange={handleFilterChange} />
+              </form>
+            )}
           </div>
           {/* Render the content based on the activeTab value */}
           <div className="info">
@@ -38,7 +46,7 @@ const CurrencyTab = () => {
             <div className="item">24h Change</div>
             <div className="item">Action</div>
           </div>
-          <Tabs activeTab={activeTab} />
+          <Tabs activeTab={activeTab} filterText={filterText} />
         </div>
       </div>
     </section>

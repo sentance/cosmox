@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Ada, Btc, Eth } from "../../assets/img/Images";
 
-const Tabs = ({ activeTab }) => {
+const Tabs = ({ activeTab, filterText }) => {
   const [cryptosData, setCryptosData] = useState([]);
 
   useEffect(() => {
@@ -45,14 +45,16 @@ const Tabs = ({ activeTab }) => {
     },
   ];
 
-  // Filter data based on the activeTab value
+  // Filter data based on the activeTab and filterText values
   const filteredData =
-    activeTab === 0 ? cryptosData : cryptosData.filter((crypto) => crypto.id === tabsData[activeTab - 1]?.currency);
+    activeTab === 0
+      ? cryptosData.filter((crypto) => crypto.id.toLowerCase().includes(filterText.toLowerCase()))
+      : cryptosData.filter((crypto) => crypto.id === tabsData[activeTab - 1]?.currency);
 
   return (
     <>
       <div className={`tabs__content ${activeTab === 0 ? "active" : ""}`}>
-        {cryptosData.map((cryptoData) => (
+        {filteredData.map((cryptoData) => (
           <div key={cryptoData.id} className="item">
             <div className="market">
               {/* Determine the correct icon based on the currency */}
