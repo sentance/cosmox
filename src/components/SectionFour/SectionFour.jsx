@@ -4,6 +4,8 @@ import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { CssTextField, CssTextArea, WhiteInputLabel } from "./SectionFourStyles";
+import Slider from "rc-slider";
+import "rc-slider/assets/index.css";
 
 const SectionFour = () => {
   const [formData, setFormData] = useState({
@@ -35,6 +37,23 @@ const SectionFour = () => {
     }
   };
 
+  const sliderImages = [
+    { id: 1, icon: <Apple /> },
+    { id: 2, icon: <Stripe /> },
+    { id: 3, icon: <Gray /> },
+    { id: 4, icon: <Pp /> },
+  ];
+
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    autoplay: true,
+    autoplaySpeed: 2000,
+  };
+
   return (
     <section className="sec4">
       <div className="container">
@@ -46,18 +65,13 @@ const SectionFour = () => {
             users. Here is a list of the payment methods we support.
           </p>
           <div className="items">
-            <div className="item">
-              <Apple />
-            </div>
-            <div className="item">
-              <Stripe />
-            </div>
-            <div className="item">
-              <Gray />
-            </div>
-            <div className="item">
-              <Pp />
-            </div>
+            <Slider {...sliderSettings}>
+              {sliderImages.map((item) => (
+                <div key={item.id} className="item">
+                  {item.icon}
+                </div>
+              ))}
+            </Slider>
           </div>
         </div>
         <div className="right">

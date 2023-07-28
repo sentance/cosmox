@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import Tabs from "./tabcomponents/Tabs";
+import TabsActiveCheck from "./TabsActiveCheck";
+import Tabs from "./Tabs";
 
-const currencyList = ["USD", "BTC", "ETH", "USDT"];
+const currencyList = ["BTC", "ETH", "ADA"];
 
-const SecondScreen = () => {
+const CurrencyTab = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   const handleTabClick = (index) => {
@@ -15,21 +16,21 @@ const SecondScreen = () => {
       <div className="container">
         <div className="tabs">
           <div className="top">
-            <ul className="tabs__caption">
+            <ul className="tabs__caption" style={{ marginBottom: "20px" }}>
               {currencyList.map((currency, index) => (
-                <li
+                <TabsActiveCheck
                   key={index}
-                  className={`tabs__item ${activeTab === index ? "active" : ""}`}
+                  currency={currency}
+                  isActive={activeTab === index}
                   onClick={() => handleTabClick(index)}
-                >
-                  {currency}
-                </li>
+                />
               ))}
             </ul>
             <form>
               <input type="text" placeholder="Filter..." />
             </form>
           </div>
+          {/* Render the content based on the activeTab value */}
           <div className="info">
             <div className="item">Market</div>
             <div className="item">Current Price</div>
@@ -37,7 +38,6 @@ const SecondScreen = () => {
             <div className="item">24h Change</div>
             <div className="item">Action</div>
           </div>
-          {/* Render the content based on the activeTab value */}
           <Tabs activeTab={activeTab} />
         </div>
       </div>
@@ -45,4 +45,4 @@ const SecondScreen = () => {
   );
 };
 
-export default SecondScreen;
+export default CurrencyTab;
