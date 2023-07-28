@@ -1438,6 +1438,7 @@ header .container .block .right .join a {
 }
 .sec1 .container .content form input {
   border-radius: 100px;
+  height: 18px;
   background: rgba(135,135,135,0.2);
   width: 100%;
   max-width: 376px;
@@ -1446,6 +1447,7 @@ header .container .block .right .join a {
   display: flex;
   align-items: center;
 }
+
 .sec1 .container .content form input::placeholder {
   color: rgba(255,255,255,0.8);
   font-family: Inter;

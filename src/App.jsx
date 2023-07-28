@@ -3,10 +3,10 @@ import "./assets/css/style.css";
 import "./assets/css/animate.css";
 import MobileMenu from "./components/MobileMenu";
 import Menu from "./components/Menu";
-import FirstScreen from "./components/FirstScreen";
+import FirstScreen from "./components/SectionFour/FirstScreen/FirstScreen";
 import SecondScreen from "./components/SecondScreen";
 import ThirdScreen from "./components/ThirdScrreen";
-import SectionFour from "./components/SectionFour";
+import SectionFour from "./components/SectionFour/SectionFour";
 import Footer from "./components/Footer";
 
 function App() {
