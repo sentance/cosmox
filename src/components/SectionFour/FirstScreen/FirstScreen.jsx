@@ -49,7 +49,9 @@ const FirstScreen = () => {
               name="email"
               required
             />
-            <button type="submit">JOIN US</button>
+            <button className="btn" type="submit">
+              JOIN US
+            </button>
           </form>
         </div>
         <a href="#">

@@ -1366,6 +1366,13 @@ header .container .block .right .join a {
   box-shadow: 0px 0px 0px 9.955300331115723px rgba(122,164,132,0.01);
   padding: 10px 25px;
 }
+header .container .block .right .join a:hover {
+  transform: scale(1.4);
+  /* Add a slight change in background color on hover */
+  background-color: #f3eded;
+  /* Add a slight change in box-shadow on hover */
+  box-shadow: 1px 1px 1px 9.955300331115723px rgba(122, 164, 132, 0.05);
+}
 .sec1 {
   background-image: linear-gradient(180deg,#1d1d1d 0%,#121212 69.79%);
   background: url(../img/bg.jpg);
@@ -1470,6 +1477,24 @@ header .container .block .right .join a {
   border-radius: 100px;
   background: #fff;
   box-shadow: 0px 0px 0px 9.955300331115723px rgba(122,164,132,0.01);
+}
+
+/* Optionally, you can set the initial state of the background image without the animation */
+.sec1 .container::after {
+  position: absolute;
+  top: -48px;
+  right: -100px;
+  content: url(../img/phone.png);
+  z-index: 5;
+  /* Add other necessary styles for the background image */
+  /* Initial scale and transition for the hover effect */
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+/* Add the hover effect */
+.sec1 .container:hover::after {
+  transform: scale(1.1); /* Increase the scale for the animation effect */
 }
 .sec1 .container a {
   background: #000;
@@ -1668,6 +1693,13 @@ header .container .block .right .join a {
   letter-spacing: 0.96px;
   text-transform: uppercase;
 }
+.sec2 .container .tabs .tabs__content .item .trade a:hover {
+  transform: scale(1.1);
+  /* Add a slight change in background color on hover */
+  background-color: #c2baba;
+  /* Add a slight change in box-shadow on hover */
+  box-shadow: 0px 0px 0px 9.955300331115723px rgba(122, 164, 132, 0.05);
+}
 .sec3 {
   background: #000;
   position: relative;
@@ -1757,6 +1789,14 @@ header .container .block .right .join a {
   line-height: 24px;
   letter-spacing: 1.12px;
   text-transform: uppercase;
+}
+.sec3 .container .but a:hover {
+  /* Scale up the button on hover */
+  transform: scale(1.1);
+  /* Add a slight change in background color on hover */
+  background-color: #f5f5f5;
+  /* Add a slight change in box-shadow on hover */
+  box-shadow: 0px 0px 0px 9.955300331115723px rgba(122, 164, 132, 0.05);
 }
 .sec4 {
   background: linear-gradient(180deg,#1c1c1c 0%,#121212 69.79%);
@@ -1960,6 +2000,71 @@ header .container .block .right .join a {
   justify-content: center;
   margin-top: 18px;
 }
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    position: absolute;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+    background-color: #fff;
+    color: #777;
+}
+
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn-white::after {
+    background-color: #fff;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn-animated {
+    animation: moveInBottom 5s ease-out;
+    animation-fill-mode: backwards;
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
 .sec4 .container .right form .but button {
   padding: 15px 45px;
   color: #fff;
@@ -2084,6 +2189,13 @@ footer .container .f2 {
   margin: 0;
   margin-top: 3px;
   text-align: left;
+}
+button:hover {
+  transform: scale(1.1);
+  /* Add a slight change in background color on hover */
+  background-color: #f5f5f5;
+  /* Add a slight change in box-shadow on hover */
+  box-shadow: 0px 0px 0px 9.955300331115723px rgba(122, 164, 132, 0.05);
 }
 #mobile-menu .button-dropdown ul.active {
   display: block;
