@@ -19,7 +19,7 @@ function App() {
       <div className="wrapper">
         <header>
           <MobileMenu isDropdownVisible={isDropdownVisible} handleDropdownToggle={handleDropdownToggle} />
-          <Menu handleDropdownToggle={handleDropdownToggle} />
+          <Menu handleDropdownToggle={handleDropdownToggle} isDropdownVisible={isDropdownVisible} />
         </header>
         <FirstScreen />
         <CurrencyTab />

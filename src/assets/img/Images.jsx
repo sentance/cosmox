@@ -503,6 +503,33 @@ export const Instagram = () => {
   );
 };
 
+export const Cross = () => {
+  return (
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M24 7.67999L8 23.68" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M8 8L24 24" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  );
+};
+
+export const Burger = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none">
+      <path
+        d="M21.75 6H2.25C1.42162 6 0.75 5.32838 0.75 4.5C0.75 3.67162 1.42162 3 2.25 3H21.75C22.5784 3 23.25 3.67162 23.25 4.5C23.25 5.32838 22.5784 6 21.75 6Z"
+        fill="white"
+      />
+      <path
+        d="M21.75 21H2.25C1.42162 21 0.75 20.3284 0.75 19.5C0.75 18.6716 1.42162 18 2.25 18H21.75C22.5784 18 23.25 18.6716 23.25 19.5C23.25 20.3284 22.5784 21 21.75 21Z"
+        fill="white"
+      />
+      <path
+        d="M21.75 13.5H2.25C1.42162 13.5 0.75 12.8284 0.75 12C0.75 11.1716 1.42162 10.5 2.25 10.5H21.75C22.5784 10.5 23.25 11.1716 23.25 12C23.25 12.8284 22.5784 13.5 21.75 13.5Z"
+        fill="white"
+      />
+    </svg>
+  );
+};
 export const Logo = () => {
   return (
     <svg width="150" height="30" viewBox="0 0 150 30" fill="none" xmlns="http://www.w3.org/2000/svg">

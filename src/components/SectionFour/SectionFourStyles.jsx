@@ -20,7 +20,6 @@ export const CssTextField = styled(TextField)({
       borderColor: "transparent", // Set the border color to transparent when focused
     },
   },
-  height: "43px", // Set the height to 43px
   borderRadius: "20px", // Set the border radius
   background: "rgba(135, 135, 135, 0.2)", // Set the background color
   fontsize: "14px",

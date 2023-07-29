@@ -766,9 +766,9 @@ th {
   transition: all 0.5s 0.1s;
 }
 .df {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
+  justify-content: space-between; /* Adjust this based on your layout needs */
+  align-items: center; 
 }
 .fr {
   -webkit-box-orient: horizontal;
@@ -1080,25 +1080,21 @@ th {
 .show_mobile_menu {
   opacity: 1 !important;
   left: 0 !important;
+  top: 0; /* Move the menu down to the bottom of the screen when visible */
+  display: block!important;
+  transition: display 1.3s ease, top 1.3s ease; /* Add transition for smooth animation */
 }
+
 #mobile-menu {
+  margin-top: 70px;
   padding: 15px;
   box-sizing: border-box;
-  opacity: 0;
-  position: absolute;
-  left: -100%;
-  top: 0;
   width: 100%;
-  height: 100vh !important;
+  height: 40vh !important;
   background: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-transition: 0.3s all ease;
-  transition: 0.3s all ease;
+  transition: 0.5s all ease;
   z-index: 1;
 }
 #mobile-menu ul {
@@ -1229,13 +1225,14 @@ header {
   -webkit-backdrop-filter: #000000 blur(20px);
   backdrop-filter: #000000 blur(20px);
 }
-header {
+/* header {
   z-index: 10;
-}
+} */
 header .container .block {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-top: 10px;
 }
 header .container .block .left {
   display: flex;
@@ -1373,12 +1370,13 @@ header .container .block .right .join a {
   box-shadow: 0px 0px 0px 9.955300331115723px rgba(122,164,132,0.01);
   padding: 10px 25px;
 }
+.join:hover {
+  -webkit-animation: scaleAnimation 1s ease-in-out infinite;
+  animation: scaleAnimation 1s ease-in-out infinite;
+}
 header .container .block .right .join a:hover {
-  transform: scale(1.4);
-  /* Add a slight change in background color on hover */
-  background-color: #f3eded;
-  /* Add a slight change in box-shadow on hover */
-  box-shadow: 1px 1px 1px 9.955300331115723px rgba(122, 164, 132, 0.05);
+  -webkit-animation: scaleAnimation 1s ease-in-out infinite;
+  animation: scaleAnimation 1s ease-in-out infinite;
 }
 .carousel-container {
   max-width: 300px; /* Adjust the width as per your design */
@@ -1823,9 +1821,17 @@ header .container .block .right .join a:hover {
   transition: transform 0.3s ease; /* Add a smooth transition effect */
 }
 .arrow:hover {
-  transform: translateY(20px); /* Move the arrow down by 20px on hover */
+  -webkit-animation: scaleAnimation 1s ease-in-out infinite;
+  animation: scaleAnimation 1s ease-in-out infinite;
 }
-
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
 .sec4 {
   background: linear-gradient(180deg,#1c1c1c 0%,#121212 69.79%);
   z-index: 3;
@@ -2188,9 +2194,10 @@ footer .container .f2 {
 }
 #mobile-menu {
   /* z-index: 8; */
-  position: fixed;
+  position: relative;
   background: #000;
 }
+
 #mobile-menu ul {
   margin-top: 60px;
 }
@@ -2731,6 +2738,7 @@ button:hover {
   section,
   footer {
     width: 100% !important;
+    min-height: 55px;
   }
   .container {
     padding: 0px 20px;
@@ -2740,7 +2748,7 @@ button:hover {
   }
   #burger-menu {
     display: block;
-    top: 3px;
+    top: 13px;
   }
   header .container .block .left nav {
     display: none;
