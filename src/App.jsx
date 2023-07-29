@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./assets/css/style.css";
 import "./assets/css/animate.css";
 import MobileMenu from "./components/MobileMenu";
@@ -10,12 +10,16 @@ import SectionFour from "./components/SectionFour/SectionFour";
 import Footer from "./components/Footer";
 
 function App() {
+  const [isDropdownVisible, setDropdownVisible] = useState(false);
+  const handleDropdownToggle = () => {
+    setDropdownVisible(!isDropdownVisible);
+  };
   return (
     <div className="App">
       <div className="wrapper">
         <header>
-          <MobileMenu />
-          <Menu />
+          <MobileMenu isDropdownVisible={isDropdownVisible} handleDropdownToggle={handleDropdownToggle} />
+          <Menu handleDropdownToggle={handleDropdownToggle} />
         </header>
         <FirstScreen />
         <CurrencyTab />

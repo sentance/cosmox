@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BritishFlag, Logo } from "../assets/img/Images";
 
-const Menu = () => {
+const Menu = ({ handleDropdownToggle }) => {
   const [contactDropdownVisible, setContactDropdownVisible] = useState(false);
   const [languageDropdownVisible, setLanguageDropdownVisible] = useState(false);
 
@@ -26,10 +26,10 @@ const Menu = () => {
                 <a href="#">Homepage</a>
               </li>
               <li>
-                <a href="#">Markets</a>
+                <a href="#markets">Markets</a>
               </li>
               <li>
-                <a href="#">Benefits</a>
+                <a href="#benefits">Benefits</a>
               </li>
             </ul>
             <div className="button-dropdown">
@@ -95,7 +95,7 @@ const Menu = () => {
           </div>
         </div>
         <div className="menu">
-          <button id="burger-menu">
+          <button id="burger-menu" onClick={handleDropdownToggle}>
             <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none">
               <path
                 d="M21.75 6H2.25C1.42162 6 0.75 5.32838 0.75 4.5C0.75 3.67162 1.42162 3 2.25 3H21.75C22.5784 3 23.25 3.67162 23.25 4.5C23.25 5.32838 22.5784 6 21.75 6Z"

@@ -17,7 +17,7 @@ const CurrencyTab = () => {
   };
 
   return (
-    <section className="sec2">
+    <section className="sec2" id="markets">
       <div className="container">
         <div className="tabs">
           <div className="top">
