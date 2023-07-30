@@ -167,7 +167,7 @@ ul {
   display: block;
   width: 100%;
   height: 2px;
-  background: #fe3c53;
+  background: #ffffff;
   transition: width 0.3s; /* You can adjust the transition duration here */
 }
 
@@ -1123,7 +1123,7 @@ th {
   padding: 15px;
   box-sizing: border-box;
   width: 100%;
-  height: 40vh !important;
+  height: 100vh !important;
   background: white;
   display: flex;
   justify-content: center;
@@ -1136,6 +1136,7 @@ th {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-left: 20px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -1153,6 +1154,17 @@ th {
   display: block;
   color: #229fd9;
   position: relative;
+}
+.mobile-menu-item {
+  padding-bottom: 10px;
+}
+.bottomBlock {
+  position: absolute;
+  bottom: 70px;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
 }
 .custom-select {
   position: relative;
@@ -1315,7 +1327,7 @@ header .container .block .left nav .button-dropdown .dropdown-toggle {
   padding: 8px 24px;
 }
 header .container .block .left nav .button-dropdown ul {
-  border-top: 2px solid #fe3c53;
+  border-top: 2px solid rgb(255, 255, 255);
   padding-bottom: 10px;
   display: none;
   position: absolute;
@@ -2243,7 +2255,7 @@ footer .container .f2 {
 }
 
 #mobile-menu ul {
-  margin-top: 60px;
+  margin-top: 50%;
 }
 #mobile-menu ul a {
   color: #fff;
@@ -2255,20 +2267,38 @@ footer .container .f2 {
 }
 #mobile-menu .button-dropdown {
   position: relative;
+  padding-bottom: 100px;
 }
 #mobile-menu .button-dropdown .dropdown-toggle {
   padding: 8px 24px;
   color: white;
+}
+.flag-show {
+  padding-right: 5px;
 }
 #mobile-menu .button-dropdown ul {
   padding-bottom: 10px;
   display: none;
   position: absolute;
   left: 0;
-  padding: 0;
+  padding-right: 240px;
   margin: 0;
   margin-top: 3px;
   text-align: left;
+}
+#dropdown-menu-mobile::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 28px;
+  width: 100px;
+  height: 2px;
+  z-index: 10;
+  background-color: white;
+}
+#lang-menu-mobile {
+  padding-left: 120px!important;
 }
 button:hover {
   transform: scale(1.1);
@@ -2283,6 +2313,7 @@ button:hover {
 #mobile-menu .button-dropdown ul li {
   width: 134px;
   display: flex;
+  padding-left: 39%;
 }
 #mobile-menu .button-dropdown ul li:last-child a {
   padding-bottom: 13px;
@@ -2569,7 +2600,9 @@ button:hover {
   }
   .menu {
     display: block;
+    
   }
+
   #burger-menu {
     display: block;
     top: 3px;
@@ -2790,6 +2823,10 @@ button:hover {
   .menu {
     display: block;
   }
+  header .container .block .left .logo {
+    margin-right: 52px;
+    margin-left: 93px;
+}
   #burger-menu {
     display: block;
     top: 13px;
@@ -2942,13 +2979,23 @@ button:hover {
     padding-bottom: 40px;
   }
   .sec4 .container .left .items {
+    /* flex-direction: column;
+    border-radius: 100px;
+    gap: 48px;
+    background: #000;
+    padding: 56px 23px;
+    margin: 0 auto;
+    max-width: 98%; */
+
     flex-direction: column;
     border-radius: 100px;
     gap: 48px;
     background: #000;
     padding: 56px 23px;
     margin: 0 auto;
-    max-width: 98%;
+    max-width: 180px;
+
+
     /* flex-direction: column;
     border-radius: 100px;
     gap: 48px;
@@ -2957,6 +3004,12 @@ button:hover {
     max-width: 70%;
     padding: 26px 24px;
     margin: 0 auto; */
+  }
+  .sec4 .container .left .item {
+    padding-bottom: 20px;
+  }
+  .pay-item {
+    padding-bottom: 30px;
   }
   .sec4 .container .right {
     width: 110%;

@@ -84,16 +84,16 @@ const SectionFour = () => {
             <Carousel {...sliderSettings}>
               {carouselImages.map((item) => (
                 <>
-                  <span style={{ paddingRight: "15px" }}>
+                  <span className="pay-item" style={{ paddingRight: "15px" }}>
                     <Gray />
                   </span>
-                  <span style={{ paddingRight: "15px" }}>
+                  <span className="pay-item" style={{ paddingRight: "15px" }}>
                     <Apple />
                   </span>
-                  <span style={{ paddingRight: "15px" }}>
+                  <span className="pay-item" style={{ paddingRight: "15px" }}>
                     <Stripe />
                   </span>
-                  <span style={{ paddingRight: "15px" }}>
+                  <span className="pay-item" style={{ paddingRight: "15px" }}>
                     <Pp />
                   </span>
                 </>
