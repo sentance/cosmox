@@ -14,7 +14,7 @@ const Menu = ({ handleDropdownToggle, isDropdownVisible }) => {
   };
 
   return (
-    <div className="container" style={{ position: "fixed", top: 0, left: 0 }}>
+    <div className="container">
       <div className="block df jb">
         <div className="left">
           <a href="" className="logo">

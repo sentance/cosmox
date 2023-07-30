@@ -8,7 +8,11 @@ const MobileMenu = ({ isDropdownVisible, handleDropdownToggle }) => {
   };
   return (
     <>
-      <div id="mobile-menu" style={{ display: "none" }} className={isDropdownVisible ? "show_mobile_menu" : ""}>
+      <div
+        id="mobile-menu"
+        style={{ position: "fixed", top: 0, left: 0, display: "none" }}
+        className={isDropdownVisible ? "show_mobile_menu" : ""}
+      >
         <div className="block df">
           <ul>
             <li>
