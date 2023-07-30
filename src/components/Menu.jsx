@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { BritishFlag, Burger, Cross, Logo } from "../assets/img/Images";
 
 const Menu = ({ handleDropdownToggle, isDropdownVisible }) => {
@@ -13,27 +13,51 @@ const Menu = ({ handleDropdownToggle, isDropdownVisible }) => {
     setLanguageDropdownVisible(!languageDropdownVisible);
   };
 
+  const menuRef = useRef(null); // Create a ref for the menu
+
+  useEffect(() => {
+    // Add event listener for clicks on the entire document
+    const handleDocumentClick = (event) => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        !event.target.classList.contains("dropdown-toggle")
+      ) {
+        // If the click is outside the menu and the button, close the menu
+        setContactDropdownVisible(false);
+        setLanguageDropdownVisible(false);
+      }
+    };
+
+    document.addEventListener("click", handleDocumentClick);
+
+    return () => {
+      // Clean up the event listener when the component is unmounted
+      document.removeEventListener("click", handleDocumentClick);
+    };
+  }, []);
+
   return (
     <div className="container">
       <div className="block df jb">
         <div className="left">
-          <a href="" className="logo">
+          <div className="logo">
             <Logo />
-          </a>
+          </div>
           <nav>
             <ul>
-              <li>
+              <li className="list-item">
                 <a href="#">Homepage</a>
               </li>
-              <li>
+              <li className="list-item">
                 <a href="#markets">Markets</a>
               </li>
-              <li>
+              <li className="list-item">
                 <a href="#benefits">Benefits</a>
               </li>
             </ul>
             <div className="button-dropdown">
-              <button className="dropdown-toggle" onClick={toggleContactDropdown}>
+              <button className="dropdown-toggle" ref={menuRef} onMouseEnter={toggleContactDropdown}>
                 Contact
               </button>
               <ul className="dropdown-menu" style={{ display: contactDropdownVisible ? "block" : "none" }}>
@@ -55,7 +79,7 @@ const Menu = ({ handleDropdownToggle, isDropdownVisible }) => {
         </div>
         <div className="right">
           <div className="button-dropdown">
-            <button className="dropdown-toggle" onClick={toggleLanguageDropdown}>
+            <button className="dropdown-toggle" onMouseEnter={toggleLanguageDropdown}>
               English
               <BritishFlag />
               <svg

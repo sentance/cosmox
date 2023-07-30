@@ -54,10 +54,10 @@ const SectionFour = () => {
   };
 
   const carouselImages = [
-    { id: 1, icon: <Apple /> },
-    { id: 2, icon: <Stripe /> },
-    { id: 3, icon: <Gray /> },
-    { id: 4, icon: <Pp /> },
+    { id: 1, icon: "" },
+    { id: 2, icon: "" },
+    { id: 3, icon: "" },
+    { id: 4, icon: "" },
   ];
 
   const sliderSettings = {
@@ -83,9 +83,20 @@ const SectionFour = () => {
           <div className="items">
             <Carousel {...sliderSettings}>
               {carouselImages.map((item) => (
-                <div key={item.id} className="carousel-item">
-                  {item.icon}
-                </div>
+                <>
+                  <span style={{ paddingRight: "15px" }}>
+                    <Gray />
+                  </span>
+                  <span style={{ paddingRight: "15px" }}>
+                    <Apple />
+                  </span>
+                  <span style={{ paddingRight: "15px" }}>
+                    <Stripe />
+                  </span>
+                  <span style={{ paddingRight: "15px" }}>
+                    <Pp />
+                  </span>
+                </>
               ))}
             </Carousel>
           </div>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ArrowDown from "../../../assets/img/arrows-down";
+import { ArrowDown } from "../../../assets/img/Images";
 import { CssTextField, WhiteInputLabel } from "./FirstScreenStyles";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
