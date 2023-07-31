@@ -1,13 +1,18 @@
 import React, { useState, useRef, useEffect } from "react";
 import { BritishFlag } from "../assets/img/Images";
+import { useTranslation } from "react-i18next"; // Import the useTranslation hook
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const MobileMenu = ({ isDropdownVisible, handleDropdownToggle }) => {
+  const { t } = useTranslation(); // Use the useTranslation hook to get access to translations
+
   const [contactDropdownVisible, setContactDropdownVisible] = useState(false);
   const [languageDropdownVisible, setLanguageDropdownVisible] = useState(false);
 
   const toggleContactDropdown = () => {
     setContactDropdownVisible(!contactDropdownVisible);
   };
+
   const toggleLanguageDropdown = () => {
     setLanguageDropdownVisible(!languageDropdownVisible);
   };
@@ -45,24 +50,16 @@ const MobileMenu = ({ isDropdownVisible, handleDropdownToggle }) => {
       >
         <div className="block df">
           <ul>
-            <li className="mobile-menu-item">
-              <a href="">
-                <span>Homepage</span>
-              </a>
-            </li>
-            <li className="mobile-menu-item">
-              <a href="#markets" onClick={handleDropdownToggle}>
-                <span>Markets</span>
-              </a>
-            </li>
-            <li className="mobile-menu-item">
-              <a href="#benefits" onClick={handleDropdownToggle}>
-                <span>Benefits</span>
-              </a>
-            </li>
+            {t("mobileMenu.menuItems", { returnObjects: true }).map((item, index) => (
+              <li className="mobile-menu-item" key={index}>
+                <a href={item.href} onClick={handleDropdownToggle}>
+                  <span>{item.label}</span>
+                </a>
+              </li>
+            ))}
             <div className="button-dropdown mobile-menu-item">
               <button className="dropdown-toggle" ref={menuRef} onClick={toggleContactDropdown}>
-                Contact
+                {t("mobileMenu.contactButton")}
               </button>
               <ul
                 className="dropdown-menu"
@@ -85,14 +82,14 @@ const MobileMenu = ({ isDropdownVisible, handleDropdownToggle }) => {
             </div>
           </ul>
           <div className="bottomBlock">
-            <div className="button-dropdown">
+            {/* <div className="button-dropdown">
               <button
                 className="dropdown-toggle"
                 style={{ paddingLeft: "14%" }}
                 ref={menuRef}
                 onMouseEnter={toggleLanguageDropdown}
               >
-                <span className="flag-show">English</span>
+                <span className="flag-show">{t("mobileMenu.languageButton")}</span>
                 <span className="flag-show">
                   <BritishFlag />
                 </span>
@@ -123,12 +120,12 @@ const MobileMenu = ({ isDropdownVisible, handleDropdownToggle }) => {
                 id="lang-menu-mobile"
                 style={{ display: languageDropdownVisible ? "block" : "none" }}
               >
-                {" "}
                 <li>
                   <a href="#">PL</a>
                 </li>
               </ul>
-            </div>
+            </div> */}
+            <LanguageSwitcher />
             <p>@2023 cosmosX - All Right Reserved</p>
           </div>
         </div>

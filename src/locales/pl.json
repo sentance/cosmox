@@ -1,10 +1,110 @@
 {
     "mainScreen": {
       "title": "MOŻEMY CI POMÓC",
-      "subTitle": "ComoxLifess",
+      "subTitle": "ComoxLifes",
       "description": "Innowacyjna platforma do wymiany kryptowalut na tradycyjne pieniądze! Nasza usługa umożliwia bezpieczną, szybką i wygodną wymianę aktywów cyfrowych na gotówkę, zapewniając użytkownikom pełne zaufanie i przejrzystość.",
       "emailLabel": "adres e-mail",
       "joinUsButton": "DOŁĄCZ DO NAS"
-    }
+    },
+    "thirdScreen": {
+        "title": "KORZYŚCI",
+        "subTitle": "System",
+        "items": [
+          {
+            "title": "System wykresów",
+            "description": "Szeroki zakres usług handlu i zarządzania kryptowalutami, zaspokajający różnorodne potrzeby handlowe"
+          },
+          {
+            "title": "Platforma handlowa",
+            "description": "Szeroki zakres usług handlu i zarządzania kryptowalutami, zaspokajający różnorodne potrzeby handlowe"
+          },
+          {
+            "title": "Platforma handlowa",
+            "description": "Szeroki zakres usług handlu i zarządzania kryptowalutami, zaspokajający różnorodne potrzeby handlowe"
+          }
+        ],
+        "buttonText": "ZAPYTAJ NAS"
+      },
+      "sectionFour": {
+        "left": {
+          "title": "PŁATNOŚCI",
+          "subTitle": "Pośrednicy",
+          "description": "Jesteśmy dumni z oferowania różnorodnych sprawdzonych metod płatności, które ułatwiają transakcje dla naszych użytkowników. Oto lista metod płatności, które obsługujemy."
+        },
+        "contactForm": {
+          "title": "KONTAKT",
+          "subTitle": "Napisz do nas",
+          "labels": {
+            "name": "Imię",
+            "lastName": "Nazwisko",
+            "email": "E-mail",
+            "phone": "Telefon",
+            "message": "Wiadomość"
+          },
+          "placeholders": {
+            "name": "Wprowadź swoje imię",
+            "lastName": "Wprowadź swoje nazwisko",
+            "email": "Wprowadź swój adres e-mail",
+            "phone": "Wprowadź swój numer telefonu",
+            "message": "Wpisz swoją wiadomość tutaj"
+          },
+          "reCAPTCHA": "Ta strona jest chroniona przez reCAPTCHA i podlega Polityce prywatności oraz Warunkom korzystania z usług Google.",
+          "requiredFields": "* - wymagane pola",
+          "submitButton": "Wyślij wiadomość"
+        }
+      },
+      "footer": {
+        "logoText": "CosmoX",
+        "email": "business@cosmox.io",
+        "rightsReserved": "© 2023 cosmox - Wszelkie prawa zastrzeżone.",
+        "links": {
+          "aboutUs": "O nas",
+          "about": "O nas",
+          "termsAndConditions": "Regulamin",
+          "privacyPolicy": "Polityka prywatności",
+          "cookies": "Ciasteczka",
+          "support": "Wsparcie",
+          "submitTicket": "Wyślij zgłoszenie",
+          "securityPolicy": "Polityka bezpieczeństwa",
+          "apiDocumentation": "Dokumentacja API",
+          "contact": "Kontakt",
+          "resources": "Zasoby",
+          "markets": "Rynki",
+          "payments": "Płatności",
+          "fees": "Opłaty"
+        }
+      },
+      "menu": {
+        "links": {
+          "homepage": "Strona główna",
+          "markets": "Rynki",
+          "benefits": "Zalety",
+          "contact": "Kontakt",
+          "facebook": "Facebook",
+          "instagram": "Instagram",
+          "tiktok": "TikTok",
+          "linkedin": "LinkedIn",
+          "login": "ZALOGUJ SIĘ",
+          "joinUs": "Dołącz do nas"
+        }
+      },
+      "currencyTab": {
+        "tabs": ["Wszystkie", "BTC", "ETH", "ADA"],
+        "filterPlaceholder": "Filtruj...",
+        "market": "Rynek",
+        "currentPrice": "Aktualna Cena",
+        "volume24h": "Wolumen 24h",
+        "change24h": "Zmiana 24h",
+        "action": "Akcja"
+      },
+      "mobileMenu": {
+        "menuItems": [
+          { "label": "Strona główna", "href": "" },
+          { "label": "Rynki", "href": "#markets" },
+          { "label": "Korzyści", "href": "#benefits" }
+        ],
+        "contactButton": "Kontakt",
+        "languageButton": "Polski"
+      }
   }
   

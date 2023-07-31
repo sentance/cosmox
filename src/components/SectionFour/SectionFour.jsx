@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { useTranslation } from "react-i18next"; // Import the useTranslation hook
 import { Carousel } from "react-responsive-carousel";
 import { Apple, Gray, Pp, Stripe } from "../../assets/img/Images";
 import { sendEmail } from "../../helpers/api";
@@ -9,6 +10,8 @@ import ReCAPTCHA from "react-google-recaptcha";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const SectionFour = () => {
+  const { t } = useTranslation(); // Use the useTranslation hook to get access to translations
+
   const [formData, setFormData] = useState({
     name: "",
     lastName: "",
@@ -88,12 +91,9 @@ const SectionFour = () => {
     <section className="sec4" id="contactform">
       <div className="container">
         <div className="left">
-          <h2>PAYMENTS</h2>
-          <h1>Intermediaries</h1>
-          <p>
-            We pride ourselves on offering a variety of proven payment methods that make transactions easier for our
-            users. Here is a list of the payment methods we support.
-          </p>
+          <h2>{t("sectionFour.left.title")}</h2>
+          <h1>{t("sectionFour.left.subTitle")}</h1>
+          <p>{t("sectionFour.left.description")}</p>
           <div className="items">
             <Carousel ref={carouselRef} {...sliderSettings}>
               {carouselImages.map((item) => (
@@ -119,8 +119,8 @@ const SectionFour = () => {
           <ToastContainer position="top-center" limit={1} />
           <form onSubmit={handleSubmit}>
             <div className="title">
-              <h2>CONTACT</h2>
-              <h1>Write us</h1>
+              <h2>{t("sectionFour.contactForm.title")}</h2>
+              <h1>{t("sectionFour.contactForm.subTitle")}</h1>
             </div>
             <div className="inputs">
               {/* Use the controlled component */}
@@ -174,18 +174,18 @@ const SectionFour = () => {
               <ReCAPTCHA sitekey="6LfMRWEnAAAAACvb5qhLIooZN6GxcXnXNhNkeJS0" onChange={handleCaptchaChange} />
             </div>
             <div className="text">
-              <p>This site is protected by reCAPTCHA</p>
+              <p>{t("sectionFour.contactForm.reCAPTCHA")}</p>
               <p>
                 and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a> and{" "}
                 <a href="https://policies.google.com/terms">Terms of Serviceapply</a> .
               </p>
               <p />
               <span>
-                <p>*</p> - required fields
+                <p>{t("sectionFour.contactForm.requiredFields")}</p>
               </span>
             </div>
             <div className="but">
-              <button type="submit">Send Message</button>
+              <button type="submit">{t("sectionFour.contactForm.submitButton")}</button>{" "}
             </div>
           </form>
         </div>

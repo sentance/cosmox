@@ -2617,7 +2617,11 @@ button:hover {
     display: block;
     
   }
-
+  .language-container {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+  }
   #burger-menu {
     display: block;
     top: 3px;
@@ -2835,6 +2839,26 @@ button:hover {
   .container {
     padding: 0px 20px;
   }
+  .language-container {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    padding-left: 8%;
+  }
+  #mobile-menu .button-dropdown ul {
+    padding-bottom: 10px;
+    display: none;
+    position: absolute;
+    left: 0;
+    padding-right: 0px;
+    margin: 0;
+    margin-top: 3px;
+    text-align: left;
+}
+  #mobile-menu .button-dropdown .dropdown-toggle {
+    padding: 8px 5px;
+    color: white;
+}
   .menu {
     display: block;
   }

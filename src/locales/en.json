@@ -1,10 +1,110 @@
 {
     "mainScreen": {
       "title": "WE CAN HELP YOU",
-      "subTitle": "ComoxLife",
+      "subTitle": "ComsoxLife",
       "description": "An innovative platform for exchanging cryptocurrencies for traditional money! Our service enables the secure, fast and convenient exchange of digital assets for cash, giving users complete trust and transparency.",
       "emailLabel": "e-mail",
       "joinUsButton": "JOIN US"
-    }
-  }
+    },
+    "thirdScreen": {
+        "title": "BENEFITS",
+        "subTitle": "System",
+        "items": [
+          {
+            "title": "Chart System",
+            "description": "A Wide Array Of Crypto Trading And Management Services to Satisfy Diverse Trading Needs"
+          },
+          {
+            "title": "Trading platform",
+            "description": "A Wide Array Of Crypto Trading And Management Services to Satisfy Diverse Trading Needs"
+          },
+          {
+            "title": "Trading platform",
+            "description": "A Wide Array Of Crypto Trading And Management Services to Satisfy Diverse Trading Needs"
+          }
+        ],
+        "buttonText": "ASK US"
+      },
+      "sectionFour": {
+        "left": {
+          "title": "PAYMENTS",
+          "subTitle": "Intermediaries",
+          "description": "We pride ourselves on offering a variety of proven payment methods that make transactions easier for our users. Here is a list of the payment methods we support."
+        },
+        "contactForm": {
+          "title": "CONTACT",
+          "subTitle": "Write us",
+          "labels": {
+            "name": "Name",
+            "lastName": "Last Name",
+            "email": "E-mail",
+            "phone": "Phone",
+            "message": "Message"
+          },
+          "placeholders": {
+            "name": "Enter your name",
+            "lastName": "Enter your last name",
+            "email": "Enter your e-mail",
+            "phone": "Enter your phone number",
+            "message": "Type your message here"
+          },
+          "reCAPTCHA": "This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.",
+          "requiredFields": "* - required fields",
+          "submitButton": "Send Message"
+        }
+      },
+      "footer": {
+        "logoText": "CosmoX",
+        "email": "business@cosmox.io",
+        "rightsReserved": "© 2023 cosmox - All Rights Reserved.",
+        "links": {
+          "aboutUs": "About us",
+          "about": "About",
+          "termsAndConditions": "Terms and Conditions",
+          "privacyPolicy": "Privacy Policy",
+          "cookies": "Cookies",
+          "support": "Support",
+          "submitTicket": "Submit Ticket",
+          "securityPolicy": "Security Policy",
+          "apiDocumentation": "API Documentation",
+          "contact": "Contact",
+          "resources": "Resources",
+          "markets": "Markets",
+          "payments": "Payments",
+          "fees": "Fees"
+        }
+      },
+      "menu": {
+        "links": {
+          "homepage": "Homepage",
+          "markets": "Markets",
+          "benefits": "Benefits",
+          "contact": "Contact",
+          "facebook": "Facebook",
+          "instagram": "Instagram",
+          "tiktok": "TikTok",
+          "linkedin": "LinkedIn",
+          "login": "LOGIN",
+          "joinUs": "Join us"
+        }
+      },
+      "currencyTab": {
+        "tabs": ["All", "BTC", "ETH", "ADA"],
+        "filterPlaceholder": "Filter...",
+        "market": "Market",
+        "currentPrice": "Current Price",
+        "volume24h": "24h Volume",
+        "change24h": "24h Change",
+        "action": "Action"
+      },
+      "mobileMenu": {
+        "menuItems": [
+          { "label": "Homepage", "href": "" },
+          { "label": "Markets", "href": "#markets" },
+          { "label": "Benefits", "href": "#benefits" }
+        ],
+        "contactButton": "Contact",
+        "languageButton": "English"
+      }
+}
   

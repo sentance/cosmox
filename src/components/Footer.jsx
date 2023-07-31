@@ -1,7 +1,10 @@
 import React from "react";
+import { useTranslation } from "react-i18next"; // Import the useTranslation hook
 import { Twitter, Logo, Instagram, Telegram } from "../assets/img/Images";
 
 const Footer = () => {
+  const { t } = useTranslation(); // Use the useTranslation hook to get access to translations
+
   return (
     <footer>
       <div className="container">
@@ -9,9 +12,9 @@ const Footer = () => {
           <a href="#" className="logo">
             <Logo />
           </a>
-          <span>CosmoX</span>
+          <span>{t("footer.logoText")}</span>
           <a href="mailto:business@cosmox.io" className="mail">
-            business@cosmox.io
+            {t("footer.email")}
           </a>
           <div className="icons">
             <div className="icon">
@@ -24,53 +27,53 @@ const Footer = () => {
               <Telegram />
             </div>
           </div>
-          <p>© 2023 cosmox - All Rights Reserved.</p>
+          <p>{t("footer.rightsReserved")}</p>
         </div>
         <div className="f2">
           <ul>
-            <li>About us</li>
+            <li>{t("footer.links.aboutUs")}</li>
             <li>
-              <a href="#">About</a>
+              <a href="#">{t("footer.links.about")}</a>
             </li>
             <li>
-              <a href="#">Terms and Conditions</a>
+              <a href="#">{t("footer.links.termsAndConditions")}</a>
             </li>
             <li>
-              <a href="#">Privacy Policy</a>
+              <a href="#">{t("footer.links.privacyPolicy")}</a>
             </li>
             <li>
-              <a href="#">Cookies</a>
+              <a href="#">{t("footer.links.cookies")}</a>
             </li>
           </ul>
         </div>
         <div className="f3">
           <ul>
-            <li>Support</li>
+            <li>{t("footer.links.support")}</li>
             <li>
-              <a href="#">Submit Ticket</a>
+              <a href="#">{t("footer.links.submitTicket")}</a>
             </li>
             <li>
-              <a href="#">Security Policy</a>
+              <a href="#">{t("footer.links.securityPolicy")}</a>
             </li>
             <li>
-              <a href="#">API Documentation</a>
+              <a href="#">{t("footer.links.apiDocumentation")}</a>
             </li>
             <li>
-              <a href="#">Contact</a>
+              <a href="#">{t("footer.links.contact")}</a>
             </li>
           </ul>
         </div>
         <div className="f4">
           <ul>
-            <li>Resources</li>
+            <li>{t("footer.links.resources")}</li>
             <li>
-              <a href="#">Markets</a>
+              <a href="#">{t("footer.links.markets")}</a>
             </li>
             <li>
-              <a href="#">Payments</a>
+              <a href="#">{t("footer.links.payments")}</a>
             </li>
             <li>
-              <a href="#">Fees</a>
+              <a href="#">{t("footer.links.fees")}</a>
             </li>
           </ul>
         </div>

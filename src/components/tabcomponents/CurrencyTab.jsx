@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import TabsActiveCheck from "./TabsActiveCheck";
 import Tabs from "./Tabs";
-
-const currencyList = ["All", "BTC", "ETH", "ADA"];
+import { useTranslation } from "react-i18next"; // Import the useTranslation hook
 
 const CurrencyTab = () => {
+  const { t } = useTranslation(); // Use the useTranslation hook to get access to translations
+
   const [activeTab, setActiveTab] = useState(0);
   const [filterText, setFilterText] = useState(""); // New state for filter text
 
@@ -22,7 +23,7 @@ const CurrencyTab = () => {
         <div className="tabs">
           <div className="top">
             <ul className="tabs__caption" style={{ marginBottom: "20px" }}>
-              {currencyList.map((currency, index) => (
+              {t("currencyTab.tabs", { returnObjects: true }).map((currency, index) => (
                 <TabsActiveCheck
                   key={index}
                   currency={currency}
@@ -34,17 +35,22 @@ const CurrencyTab = () => {
             {/* Conditionally render the filter input only when the "All" tab is active */}
             {activeTab === 0 && (
               <form>
-                <input type="text" placeholder="Filter..." value={filterText} onChange={handleFilterChange} />
+                <input
+                  type="text"
+                  placeholder={t("currencyTab.filterPlaceholder")}
+                  value={filterText}
+                  onChange={handleFilterChange}
+                />
               </form>
             )}
           </div>
           {/* Render the content based on the activeTab value */}
           <div className="info">
-            <div className="item">Market</div>
-            <div className="item">Current Price</div>
-            <div className="item">24h Volume</div>
-            <div className="item">24h Change</div>
-            <div className="item">Action</div>
+            <div className="item">{t("currencyTab.market")}</div>
+            <div className="item">{t("currencyTab.currentPrice")}</div>
+            <div className="item">{t("currencyTab.volume24h")}</div>
+            <div className="item">{t("currencyTab.change24h")}</div>
+            <div className="item">{t("currencyTab.action")}</div>
           </div>
           <Tabs activeTab={activeTab} filterText={filterText} />
         </div>

@@ -1,39 +1,32 @@
 import React from "react";
+import { useTranslation } from "react-i18next"; // Import the useTranslation hook
 import { I3, I2, I1 } from "../assets/img/Images";
 
 const ThirdScreen = () => {
+  const { t } = useTranslation(); // Use the useTranslation hook to get access to translations
+
   return (
     <section className="sec3" id="benefits">
       <div className="container">
         <div className="title">
-          <h2>BENEFITS</h2>
-          <h1>System</h1>
+          <h2>{t("thirdScreen.title")}</h2>
+          <h1>{t("thirdScreen.subTitle")}</h1>
         </div>
         <div className="items">
-          <div className="item">
-            <I1 />
-            <div className="text">
-              <span>Chart System</span>
-              <p>A Wide Array Od Crypto Trading And Management Services to Satisfy Diverse Trading Needs</p>
+          {t("thirdScreen.items", { returnObjects: true }).map((item, index) => (
+            <div className="item" key={index}>
+              {index === 0 && <I1 />}
+              {index === 1 && <I2 />}
+              {index === 2 && <I3 />}
+              <div className="text">
+                <span>{item.title}</span>
+                <p>{item.description}</p>
+              </div>
             </div>
-          </div>
-          <div className="item">
-            <I2 />
-            <div className="text">
-              <span>Trading platform</span>
-              <p>A Wide Array Od Crypto Trading And Management Services to Satisfy Diverse Trading Needs</p>
-            </div>
-          </div>
-          <div className="item">
-            <I3 />
-            <div className="text">
-              <span>Trading platform</span>
-              <p>A Wide Array Od Crypto Trading And Management Services to Satisfy Diverse Trading Needs</p>
-            </div>
-          </div>
+          ))}
         </div>
         <div className="but">
-          <a href="#contactform">ASK US</a>
+          <a href="#contactform">{t("thirdScreen.buttonText")}</a>
         </div>
       </div>
     </section>

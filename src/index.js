@@ -8,22 +8,6 @@ import App from "./App";
 i18n
   .use(LanguageDetector) // Enable automatic language detection
   .init({
-    resources: {
-      en: {
-        translation: {
-          // English translations
-          "welcome.message": "Welcome to the React i18n Example!",
-          // Add more translations here for English
-        },
-      },
-      pl: {
-        translation: {
-          // Polish translations
-          "welcome.message": "Witaj w przykładzie React i18n!",
-          // Add more translations here for Polish
-        },
-      },
-    },
     fallbackLng: "en", // Fallback language if the detected language is not available
     interpolation: {
       escapeValue: false, // React already escapes the values, so no need to escape again
