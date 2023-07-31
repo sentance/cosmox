@@ -3,7 +3,7 @@ import "./assets/css/style.css";
 import "./assets/css/animate.css";
 import MobileMenu from "./components/MobileMenu";
 import Menu from "./components/Menu";
-import FirstScreen from "./components/SectionFour/FirstScreen/FirstScreen";
+import MainScreen from "./components/MainScreen/MainScreen";
 import CurrencyTab from "./components/tabcomponents/CurrencyTab";
 import ThirdScreen from "./components/ThirdScrreen";
 import SectionFour from "./components/SectionFour/SectionFour";
@@ -21,7 +21,7 @@ function App() {
           <MobileMenu isDropdownVisible={isDropdownVisible} handleDropdownToggle={handleDropdownToggle} />
           <Menu handleDropdownToggle={handleDropdownToggle} isDropdownVisible={isDropdownVisible} />
         </header>
-        <FirstScreen />
+        <MainScreen />
         <CurrencyTab />
         <ThirdScreen />
         <SectionFour />

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { ArrowDown } from "../../../assets/img/Images";
-import { CssTextField, WhiteInputLabel } from "./FirstScreenStyles";
-import axios from "axios";
+import { ArrowDown } from "../../assets/img/Images";
+import { CssTextField, WhiteInputLabel } from "./MainScreenStyles";
+import { sendEmail } from "../../helpers/api";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const FirstScreen = () => {
+const MainScreen = () => {
   const [formData, setFormData] = useState({
     email: "",
   });
@@ -22,11 +22,12 @@ const FirstScreen = () => {
     event.preventDefault();
 
     try {
-      const { data } = await axios.post(`/api/email`, formData);
+      // Use the sendEmail function here
+      const data = await sendEmail(formData);
 
       toast.success(data.message);
     } catch (error) {
-      toast.error(error.response && error.response.data.message ? error.response.data.message : error.message);
+      toast.error(error.message);
     }
   };
 
@@ -72,4 +73,4 @@ const FirstScreen = () => {
   );
 };
 
-export default FirstScreen;
+export default MainScreen;
