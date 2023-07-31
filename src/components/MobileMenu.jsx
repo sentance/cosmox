@@ -86,7 +86,12 @@ const MobileMenu = ({ isDropdownVisible, handleDropdownToggle }) => {
           </ul>
           <div className="bottomBlock">
             <div className="button-dropdown">
-              <button className="dropdown-toggle" ref={menuRef} onMouseEnter={toggleLanguageDropdown}>
+              <button
+                className="dropdown-toggle"
+                style={{ paddingLeft: "14%" }}
+                ref={menuRef}
+                onMouseEnter={toggleLanguageDropdown}
+              >
                 <span className="flag-show">English</span>
                 <span className="flag-show">
                   <BritishFlag />

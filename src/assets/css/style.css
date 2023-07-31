@@ -1132,7 +1132,7 @@ th {
 }
 #mobile-menu ul {
   padding-left: 0;
-  width: 300px;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1313,10 +1313,9 @@ header .container .block .left nav ul li a {
   font-weight: 400;
   line-height: 22px;
 }
-a:hover {
+/* a:hover {
   transform: scale(1.1);
-  box-shadow: 0px 0px 0px 9.955300331115723px rgba(122, 164, 132, 0.05);
-}
+} */
 
 
 header .container .block .left nav .button-dropdown {
@@ -1424,10 +1423,14 @@ header .container .block .right .join a {
   box-shadow: 0px 0px 0px 9.955300331115723px rgba(122,164,132,0.01);
   padding: 10px 25px;
 }
-.join:hover {
+/* .join:hover {
   -webkit-animation: scaleAnimation 1s ease-in-out infinite;
   animation: scaleAnimation 1s ease-in-out infinite;
+} */
+.join {
+  animation: pulse 1.5s infinite;
 }
+
 header .container .block .right .join a:hover {
   -webkit-animation: scaleAnimation 1s ease-in-out infinite;
   animation: scaleAnimation 1s ease-in-out infinite;
@@ -1548,6 +1551,15 @@ header .container .block .right .join a:hover {
   border-radius: 100px;
   background: #fff;
   box-shadow: 0px 0px 0px 9.955300331115723px rgba(122,164,132,0.01);
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 #333636;
+  }
+  100% {
+      box-shadow: 0 0 0 10px rgba(251,179,47,.004);
+  }
 }
 
 /* Optionally, you can set the initial state of the background image without the animation */
@@ -1845,6 +1857,7 @@ header .container .block .right .join a:hover {
 .sec3 .container .but {
   display: flex;
   justify-content: center;
+  animation: pulse 1.5s infinite;
 }
 .sec3 .container .but a {
   border-radius: 100px;
@@ -1873,13 +1886,11 @@ header .container .block .right .join a:hover {
   width: 50px; /* Adjust the width as needed */
   height: auto;
   transition: transform 0.3s ease; /* Add a smooth transition effect */
-    -webkit-animation: scaleAnimation 1s ease-in-out infinite;
-  animation: scaleAnimation 1s ease-in-out infinite;
 }
-/* .arrow:hover {
+.arrow:hover {
   -webkit-animation: scaleAnimation 1s ease-in-out infinite;
   animation: scaleAnimation 1s ease-in-out infinite;
-} */
+}
 @keyframes scaleAnimation {
   0% {
     transform: scale(1);

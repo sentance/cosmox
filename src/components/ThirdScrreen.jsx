@@ -33,7 +33,7 @@ const ThirdScreen = () => {
           </div>
         </div>
         <div className="but">
-          <a href="#">CHECK MORE</a>
+          <a href="#contactform">ASK US</a>
         </div>
       </div>
     </section>

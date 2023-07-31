@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Carousel } from "react-responsive-carousel";
 import { Apple, Gray, Pp, Stripe } from "../../assets/img/Images";
 import { sendEmail } from "../../helpers/api";
@@ -59,7 +59,21 @@ const SectionFour = () => {
     { id: 3, icon: "" },
     { id: 4, icon: "" },
   ];
+  const carouselRef = useRef(null); // Create a ref for the Carousel component
 
+  const handleNextSlide = () => {
+    // Call the next method of the Carousel component
+    if (carouselRef.current) {
+      carouselRef.current.next();
+    }
+  };
+
+  const handlePrevSlide = () => {
+    // Call the prev method of the Carousel component
+    if (carouselRef.current) {
+      carouselRef.current.prev();
+    }
+  };
   const sliderSettings = {
     showArrows: false, // Hide navigation arrows
     showStatus: false, // Hide the current slide status (e.g., 1/4)
@@ -71,7 +85,7 @@ const SectionFour = () => {
   };
 
   return (
-    <section className="sec4">
+    <section className="sec4" id="contactform">
       <div className="container">
         <div className="left">
           <h2>PAYMENTS</h2>
@@ -81,7 +95,7 @@ const SectionFour = () => {
             users. Here is a list of the payment methods we support.
           </p>
           <div className="items">
-            <Carousel {...sliderSettings}>
+            <Carousel ref={carouselRef} {...sliderSettings}>
               {carouselImages.map((item) => (
                 <>
                   <span className="pay-item" style={{ paddingRight: "15px" }}>
@@ -161,7 +175,10 @@ const SectionFour = () => {
             </div>
             <div className="text">
               <p>This site is protected by reCAPTCHA</p>
-              <p>and the Google Privacy Policy and Terms of Serviceapply.</p>
+              <p>
+                and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a> and{" "}
+                <a href="https://policies.google.com/terms">Terms of Serviceapply</a> .
+              </p>
               <p />
               <span>
                 <p>*</p> - required fields
