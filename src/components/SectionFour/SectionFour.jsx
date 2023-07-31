@@ -40,7 +40,7 @@ const SectionFour = () => {
     try {
       const message = await sendEmail(formData);
 
-      toast.success(data.message);
+      toast.success(message.data);
     } catch (error) {
       toast.error(error.response && error.response.data.message ? error.response.data.message : error.message);
     }
@@ -134,6 +134,7 @@ const SectionFour = () => {
                 onChange={handleChange}
                 name="email"
                 required
+                type="email"
               />
               <CssTextField
                 label={<WhiteInputLabel>Phone</WhiteInputLabel>}
@@ -141,7 +142,11 @@ const SectionFour = () => {
                 value={formData.phone}
                 name="phone"
                 onChange={handleChange}
+                inputProps={{
+                  pattern: "^(\\([0-9]{3}\\)\\s*|[0-9]{3}-)[0-9]{3}-[0-9]{4}$", // Regular expression for phone number format
+                }}
                 required
+                type="number"
               />
 
               <CssTextArea

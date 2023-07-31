@@ -58,6 +58,7 @@ const MainScreen = () => {
               value={formData.email}
               onChange={handleChange}
               name="email"
+              type="email"
               required
             />
             <button className="btn" type="submit">
