@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import { Apple, Gray, Pp, Stripe } from "../../assets/img/Images";
-import axios from "axios";
+import { sendEmail } from "../../helpers/api";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { CssTextField, CssTextArea, WhiteInputLabel } from "./SectionFourStyles";
@@ -38,7 +38,7 @@ const SectionFour = () => {
 
     // Send the data to Mailgun using an HTTP POST request
     try {
-      const { data } = await axios.post(`/api/email`, formData);
+      const message = await sendEmail(formData);
 
       toast.success(data.message);
     } catch (error) {

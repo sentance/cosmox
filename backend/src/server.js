@@ -35,14 +35,16 @@ const verifyCaptcha = async (captchaResponse) => {
 };
 
 app.post("/api/email", async (req, res) => {
-  const { email, name, lastName, phone, message, captchaResponse } = req.body; // Include captchaResponse in the request body
+  const { email, name, lastName, phone, message, captchaResponse } = req.body;
 
-  // Verify the captcha response
-  const isCaptchaValid = await verifyCaptcha(captchaResponse);
+  // Check if captchaResponse exists and verify the captcha if available
+  if (captchaResponse) {
+    const isCaptchaValid = await verifyCaptcha(captchaResponse);
 
-  if (!isCaptchaValid) {
-    res.status(400).send({ message: "Invalid captcha response" });
-    return;
+    if (!isCaptchaValid) {
+      res.status(400).send({ message: "Invalid captcha response" });
+      return;
+    }
   }
 
   const emailMessage = `
