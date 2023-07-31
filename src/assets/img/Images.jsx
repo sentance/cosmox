@@ -659,6 +659,24 @@ export const Search = () => {
   );
 };
 
+export const ArrowLangSwitcher = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width={9} height={8} viewBox="0 0 9 8" fill="none">
+      {" "}
+      <g clipPath="url(#clip0_1_833)">
+        <path
+          d="M5.66279 4.56133L8.70493 0.117644C8.84552 -0.0875742 8.91992 -0.294346 8.91992 -0.466214C8.91992 -0.798487 8.65325 -1.00403 8.20687 -1.00403L1.63194 -1.00403C1.18608 -1.00403 0.919922 -0.798746 0.919922 -0.46725C0.919922 -0.295123 0.994393 -0.0916539 1.13537 0.114017L4.17744 4.55978C4.3734 4.84569 4.63709 5.00402 4.92028 5.00402C5.20327 5.00408 5.4669 4.84756 5.66279 4.56133Z"
+          fill="white"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_1_833">
+          <rect width={8} height={8} fill="white" transform="matrix(0 1 -1 0 8.91992 0)" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
 export const Stripe = () => {
   return (
     <svg width="77" height="37" viewBox="0 0 77 37" fill="none" xmlns="http://www.w3.org/2000/svg">

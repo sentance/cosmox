@@ -1,0 +1,50 @@
+import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { ArrowLangSwitcher, BritishFlag } from "../assets/img/Images";
+
+const LanguageSwitcher = () => {
+  const { i18n } = useTranslation();
+  const [languageDropdownVisible, setLanguageDropdownVisible] = useState(false);
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+    setLanguageDropdownVisible(false); // Close the dropdown after language change
+  };
+
+  const toggleLanguageDropdown = (event) => {
+    event.stopPropagation(); // Prevent the click event from propagating to the button
+    setLanguageDropdownVisible((prevState) => !prevState);
+  };
+
+  const closeLanguageDropdown = () => {
+    setLanguageDropdownVisible(false);
+  };
+
+  return (
+    <div className="button-dropdown">
+      <div className="language-container">
+        <a href="#" onClick={() => changeLanguage("en")}>
+          English
+          <BritishFlag />
+        </a>
+        <a href="#" className="dropdown-toggle" onClick={toggleLanguageDropdown}>
+          <ArrowLangSwitcher />
+        </a>
+      </div>
+
+      <ul
+        className="dropdown-menu"
+        style={{ display: languageDropdownVisible ? "block" : "none" }}
+        onClick={closeLanguageDropdown}
+      >
+        <li>
+          <a href="#" onClick={() => changeLanguage("pl")}>
+            PL
+          </a>
+        </li>
+      </ul>
+    </div>
+  );
+};
+
+export default LanguageSwitcher;

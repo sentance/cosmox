@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { BritishFlag, Burger, Cross, Logo } from "../assets/img/Images";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Menu = ({ handleDropdownToggle, isDropdownVisible }) => {
   const [contactDropdownVisible, setContactDropdownVisible] = useState(false);
@@ -78,7 +79,8 @@ const Menu = ({ handleDropdownToggle, isDropdownVisible }) => {
           </nav>
         </div>
         <div className="right">
-          <div className="button-dropdown">
+          <LanguageSwitcher />
+          {/* <div className="button-dropdown">
             <button className="dropdown-toggle" onMouseEnter={toggleLanguageDropdown}>
               English
               <BritishFlag />
@@ -110,7 +112,7 @@ const Menu = ({ handleDropdownToggle, isDropdownVisible }) => {
                 <a href="#">PL</a>
               </li>
             </ul>
-          </div>
+          </div> */}
           <div className="login">
             <a href="#">LOGIN</a>
           </div>

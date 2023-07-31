@@ -1130,6 +1130,10 @@ th {
   transition: 0.5s all ease;
   z-index: 1;
 }
+.language-container {
+  display: flex;
+  align-items: center;
+}
 #mobile-menu ul {
   padding-left: 0;
   width: 100%;
@@ -1364,7 +1368,7 @@ header .container .block .right .button-dropdown {
   margin-left: 40px;
 }
 header .container .block .right .button-dropdown .dropdown-toggle {
-  padding: 8px 24px;
+  padding: 8px 10px;
   gap: 5px;
   display: flex;
   align-items: center;
