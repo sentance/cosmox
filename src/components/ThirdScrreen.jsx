@@ -25,8 +25,10 @@ const ThirdScreen = () => {
             </div>
           ))}
         </div>
-        <div className="but">
-          <a href="#contactform">{t("thirdScreen.buttonText")}</a>
+        <div className="button-container">
+          <div className="pulse-button">
+            <a href="#contactform">{t("thirdScreen.buttonText")}</a>
+          </div>
         </div>
       </div>
     </section>

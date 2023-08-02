@@ -1243,7 +1243,7 @@ th {
   right: -15px;
 }
 body {
-  font-family: "Montserrat", sans-serif;
+  /* font-family: "Montserrat", sans-serif; */
   font-size: 16px;
   color: black;
 }
@@ -1271,7 +1271,7 @@ header {
   color: white;
   padding: 17px 0;
   background: #000;
-  z-index: 10;
+  z-index: 16;
   -webkit-backdrop-filter: #000000 blur(20px);
   backdrop-filter: #000000 blur(20px);
 }
@@ -1328,6 +1328,7 @@ header .container .block .left nav .button-dropdown {
 }
 header .container .block .left nav .button-dropdown .dropdown-toggle {
   padding: 8px 24px;
+  font-family: Gilroy-Bold;
 }
 header .container .block .left nav .button-dropdown ul {
   border-top: 2px solid rgb(255, 255, 255);
@@ -1479,6 +1480,7 @@ header .container .block .right .join a:hover {
 .sec1 .container {
   display: flex;
   align-items: center;
+  z-index: 10;
   height: 100%;
   width: 100%;
 }
@@ -1550,21 +1552,18 @@ header .container .block .right .join a:hover {
   font-style: normal;
   font-weight: 700;
   line-height: 24px;
+  margin-left: 12px;
+  width: 150px;
+  height: 57px;
   letter-spacing: 1.12px;
   text-transform: uppercase;
   padding: 16px 35px;
   border-radius: 100px;
-  background: #fff;
+  background: #fff!important;
   box-shadow: 0px 0px 0px 9.955300331115723px rgba(122,164,132,0.01);
-  animation: pulse 1.5s infinite;
 }
 
-.sec1 .container .content form button:before{
-    animation: pulse 2s ease-out infinite;
-}
-.sec1 .container .content form button:after{
-    animation: pulse 2s 1s ease-out infinite;
-}
+
 
 /* Optionally, you can set the initial state of the background image without the animation */
 .sec1 .container::after {
@@ -1790,6 +1789,7 @@ header .container .block .right .join a:hover {
 .sec3 {
   background: #000;
   position: relative;
+  z-index: 10;
 }
 .sec3::after {
   content: url(../img/bg2.svg);
@@ -1858,12 +1858,49 @@ header .container .block .right .join a:hover {
   font-weight: 400;
   line-height: 24px;
 }
-.sec3 .container .but {
+.button-container {
   display: flex;
   justify-content: center;
-  animation: pulse 1.5s infinite;
 }
-.sec3 .container .but a {
+.button-container .but {
+  display: flex;
+  justify-content: center;
+  color: #000;
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 48px;
+  letter-spacing: 1.12px;
+  text-transform: uppercase;
+  border-radius: 100px;
+  border: 1px solid #fff;
+  position: relative;
+  animation: pulse 1.5s infinite;
+  width: 200px;
+  background: #000;
+  height: 50px;
+  padding: 0;
+  z-index: 1;
+}
+.button-container .but:before,
+.button-container .but:after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #818181;
+    border-radius: 25px;
+    z-index: -100;
+    opacity: 0.7;
+}
+.button-container .but:before{
+    animation: pulse 2s ease-out infinite;
+}
+.button-container .but:after{
+    animation: pulse 2s 1s ease-out infinite;
+}
+
+/* .sec3 .container .but a {
   border-radius: 100px;
   background: #fff;
   box-shadow: 0px 0px 0px 9.955300331115723px rgba(122,164,132,0.01);
@@ -1877,15 +1914,8 @@ header .container .block .right .join a:hover {
   line-height: 24px;
   letter-spacing: 1.12px;
   text-transform: uppercase;
-}
-.sec3 .container .but a:hover {
-  /* Scale up the button on hover */
-  transform: scale(1.1);
-  /* Add a slight change in background color on hover */
-  background-color: #f5f5f5;
-  /* Add a slight change in box-shadow on hover */
-  box-shadow: 0px 0px 0px 9.955300331115723px rgba(122, 164, 132, 0.05);
-}
+} */
+
 .arrow {
   width: 50px; /* Adjust the width as needed */
   height: auto;
@@ -1905,7 +1935,7 @@ header .container .block .right .join a:hover {
 }
 .sec4 {
   background: linear-gradient(180deg,#1c1c1c 0%,#121212 69.79%);
-  z-index: 3;
+  z-index: 30;
 }
 .sec4 .container {
   padding: 66px 0 28px 0;
@@ -2149,7 +2179,9 @@ header .container .block .right .join a:hover {
 .btn-white::after {
     background-color: #fff;
 }
-
+.join {
+  font-family: Gilroy-Bold;
+}
 .btn:hover::after {
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0;
@@ -2195,7 +2227,7 @@ header .container .block .right .join a:hover {
     position: absolute;
     height: 100%;
     width: 100%;
-    background-color: #c03d3d;
+    background-color: #818181;
     border-radius: 25px;
     z-index: -1;
     opacity: 0.7;
@@ -2205,6 +2237,10 @@ header .container .block .right .join a:hover {
 }
 .pulse-button:after{
     animation: pulse 2s 1s ease-out infinite;
+}
+.button-container .pulse-button {
+height: 60px;
+  line-height: 24px;
 }
 @keyframes pulse{
     100%{
@@ -2354,10 +2390,24 @@ footer .container .f2 {
   z-index: 10;
   background-color: white;
 }
+.static-image {
+  display: none; /* Hide the static image by default */
+}
+
+/* Use media queries to show/hide the Carousel and static image based on screen width */
+@media (max-width: 576px) { /* You can adjust the breakpoint as per your design needs */
+  .items {
+    display: none; /* Hide the Carousel on mobile */
+  }
+  .static-image {
+    display: block; /* Show the static image on mobile */
+    /* Add the styles for the static image here, e.g. background-image, width, height, etc. */
+  }
+}
 #lang-menu-mobile {
   padding-left: 120px!important;
 }
-button:hover {
+.but button:hover {
   transform: scale(1.1);
   /* Add a slight change in background color on hover */
   /* background-color: #f5f5f5; */
@@ -2369,7 +2419,7 @@ button:hover {
 }
 #mobile-menu .button-dropdown ul li {
   width: 134px;
-  display: flex;
+  /* display: flex; */
   padding-left: 39%;
 }
 #mobile-menu .button-dropdown ul li:last-child a {
@@ -2871,6 +2921,9 @@ button:hover {
     align-items: center;
   }
 }
+.sec4 .container .left .items2 {
+  display: none;
+}
 @media (min-width: 320px) and (max-width: 575px) {
   header,
   section,
@@ -3059,6 +3112,17 @@ button:hover {
   .sec4 .container .left {
     padding-bottom: 40px;
   }
+  .sec4 .container .left .items2 {
+    display: block;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 100px;
+    gap: 48px;
+    background: #000;
+    padding: 56px 23px;
+    margin: 0 auto;
+    max-width: 180px;
+  }
   .sec4 .container .left .items {
     /* flex-direction: column;
     border-radius: 100px;
@@ -3068,13 +3132,7 @@ button:hover {
     margin: 0 auto;
     max-width: 98%; */
 
-    flex-direction: column;
-    border-radius: 100px;
-    gap: 48px;
-    background: #000;
-    padding: 56px 23px;
-    margin: 0 auto;
-    max-width: 180px;
+    display: none;
 
 
     /* flex-direction: column;

@@ -61,11 +61,12 @@ const MainScreen = () => {
               type="email"
               required
             />
-            <button className="btn" type="submit">
+            <button className="pulse-button" type="submit">
               {t("mainScreen.joinUsButton")}
             </button>
           </form>
         </div>
+
         <a href="#" onClick={handleArrowClick} className="arrow">
           <ArrowDown />
         </a>

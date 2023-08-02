@@ -114,6 +114,20 @@ const SectionFour = () => {
               ))}
             </Carousel>
           </div>
+          <div className="items2">
+            <span className="pay-item" style={{ paddingRight: "15px" }}>
+              <Gray />
+            </span>
+            <span className="pay-item" style={{ paddingRight: "15px" }}>
+              <Apple />
+            </span>
+            <span className="pay-item" style={{ paddingRight: "15px" }}>
+              <Stripe />
+            </span>
+            <span className="pay-item" style={{ paddingRight: "15px" }}>
+              <Pp />
+            </span>
+          </div>
         </div>
         <div className="right">
           <ToastContainer position="top-center" limit={1} />

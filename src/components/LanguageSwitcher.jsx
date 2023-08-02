@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { ArrowLangSwitcher, BritishFlag } from "../assets/img/Images";
+import { ArrowLangSwitcher, BritishFlag, Poland } from "../assets/img/Images";
 
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
@@ -39,7 +39,11 @@ const LanguageSwitcher = () => {
       >
         <li>
           <a href="#" onClick={() => changeLanguage("pl")}>
-            PL
+            Polish
+            <span style={{ paddingLeft: 5 }}>
+              {" "}
+              <Poland />
+            </span>
           </a>
         </li>
       </ul>
