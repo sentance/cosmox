@@ -86,7 +86,7 @@ const Menu = ({ handleDropdownToggle, isDropdownVisible }) => {
           <div className="login">
             <a href="#">{t("menu.links.login")}</a>
           </div>
-          <div className="join">
+          <div className="pulse-button">
             <a href="#">{t("menu.links.joinUs")}</a>
           </div>
         </div>

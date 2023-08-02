@@ -1338,6 +1338,7 @@ header .container .block .left nav .button-dropdown ul {
   padding: 0;
   margin: 0;
   margin-top: 3px;
+  background-color: #161616;
   text-align: left;
 }
 header .container .block .left nav .button-dropdown ul.active {
@@ -1557,13 +1558,12 @@ header .container .block .right .join a:hover {
   box-shadow: 0px 0px 0px 9.955300331115723px rgba(122,164,132,0.01);
   animation: pulse 1.5s infinite;
 }
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 #333636;
-  }
-  100% {
-      box-shadow: 0 0 0 10px rgba(251,179,47,.004);
-  }
+
+.sec1 .container .content form button:before{
+    animation: pulse 2s ease-out infinite;
+}
+.sec1 .container .content form button:after{
+    animation: pulse 2s 1s ease-out infinite;
 }
 
 /* Optionally, you can set the initial state of the background image without the animation */
@@ -2171,6 +2171,48 @@ header .container .block .right .join a:hover {
         transform: translateY(0px);
     }
 }
+.pulse-button {
+  height: 40px;
+  width: 120px;
+  background: #fff;
+  position: relative;
+  margin: auto;
+  border-radius: 25px;
+  display: grid;
+  place-items: center;
+  color: #000;
+  font-family: Gilroy-Bold;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.pulse-button:before,
+.pulse-button:after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #c03d3d;
+    border-radius: 25px;
+    z-index: -1;
+    opacity: 0.7;
+}
+.pulse-button:before{
+    animation: pulse 2s ease-out infinite;
+}
+.pulse-button:after{
+    animation: pulse 2s 1s ease-out infinite;
+}
+@keyframes pulse{
+    100%{
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
 .sec4 .container .right form .but button {
   padding: 15px 45px;
   color: #fff;
