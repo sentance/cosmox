@@ -33,6 +33,9 @@ const verifyCaptcha = async (captchaResponse) => {
     return false;
   }
 };
+app.get("/", (req, res) => {
+  res.send("Hey this is my API running 🥳");
+});
 
 app.post("/api/email", async (req, res) => {
   const { email, name, lastName, phone, message, captchaResponse } = req.body;
