@@ -11,6 +11,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const SectionFour = () => {
   const { t } = useTranslation(); // Use the useTranslation hook to get access to translations
+  const recaptchaRef = useRef(null); // Create a ref for the Recaptcha component
 
   const [formData, setFormData] = useState({
     name: "",
@@ -18,7 +19,6 @@ const SectionFour = () => {
     email: "",
     phone: "",
     message: "",
-    "g-recaptcha-response": "", // Add this key to the state
   });
 
   const handleChange = (event) => {
@@ -32,8 +32,7 @@ const SectionFour = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Verify captcha
-    const captchaValue = formData["g-recaptcha-response"];
+    const captchaValue = recaptchaRef.current.getValue();
     if (!captchaValue) {
       toast.error("Please complete the reCAPTCHA challenge.");
       return;
@@ -78,7 +77,7 @@ const SectionFour = () => {
     }
   };
   const sliderSettings = {
-    showArrows: true, // Hide navigation arrows
+    showArrows: false, // Hide navigation arrows
     showStatus: false, // Hide the current slide status (e.g., 1/4)
     showIndicators: false, // Hide the dots at the bottom of the carousel
     showThumbs: false, // Hide the thumbnail images
@@ -185,7 +184,11 @@ const SectionFour = () => {
                 name="message"
                 required
               />
-              <ReCAPTCHA sitekey="6LfMRWEnAAAAACvb5qhLIooZN6GxcXnXNhNkeJS0" onChange={handleCaptchaChange} />
+              <ReCAPTCHA
+                ref={recaptchaRef}
+                sitekey="6LeRHnonAAAAANkiH9P2RIPzywfrpseaCwGaadS4"
+                onChange={handleCaptchaChange}
+              />
             </div>
             <div className="text">
               <p>{t("sectionFour.contactForm.reCAPTCHA")}</p>

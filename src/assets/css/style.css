@@ -1137,6 +1137,7 @@ th {
 }
 .language-container:hover {
   background-color: #333131;
+  padding: 5px;
 }
 #mobile-menu ul {
   padding-left: 0;
