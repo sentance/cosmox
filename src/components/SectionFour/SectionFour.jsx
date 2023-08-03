@@ -19,6 +19,7 @@ const SectionFour = () => {
     email: "",
     phone: "",
     message: "",
+    "g-recaptcha-response": "", // Add this key to the state
   });
 
   const handleChange = (event) => {
@@ -63,19 +64,6 @@ const SectionFour = () => {
   ];
   const carouselRef = useRef(null); // Create a ref for the Carousel component
 
-  const handleNextSlide = () => {
-    // Call the next method of the Carousel component
-    if (carouselRef.current) {
-      carouselRef.current.next();
-    }
-  };
-
-  const handlePrevSlide = () => {
-    // Call the prev method of the Carousel component
-    if (carouselRef.current) {
-      carouselRef.current.prev();
-    }
-  };
   const sliderSettings = {
     showArrows: false, // Hide navigation arrows
     showStatus: false, // Hide the current slide status (e.g., 1/4)
@@ -84,6 +72,8 @@ const SectionFour = () => {
     infiniteLoop: true,
     autoPlay: true,
     interval: 2000,
+    swipeable: true,
+    emulateTouch: true, // Enable mouse swiping
   };
 
   return (
@@ -186,7 +176,7 @@ const SectionFour = () => {
               />
               <ReCAPTCHA
                 ref={recaptchaRef}
-                sitekey="6LeRHnonAAAAANkiH9P2RIPzywfrpseaCwGaadS4"
+                sitekey="6LfCNXonAAAAAPBXF6QJxGb4PXWRDSMrPpKQiDO5"
                 onChange={handleCaptchaChange}
               />
             </div>

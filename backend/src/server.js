@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Function to verify reCAPTCHA response
 const verifyCaptcha = async (captchaResponse) => {
-  const secretKey = "6LfMRWEnAAAAALFyDlGueV60_2gdAf-EW7Uk0E6U"; // Replace with your secret key
+  const secretKey = "6LfCNXonAAAAAF9sJKBGqJiopy1WttNd2PkrEJHY"; // Replace with your secret key
   const url = "https://www.google.com/recaptcha/api/siteverify";
 
   try {
