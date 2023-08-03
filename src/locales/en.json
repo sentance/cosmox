@@ -48,7 +48,7 @@
             "phone": "Enter your phone number",
             "message": "Type your message here"
           },
-          "reCAPTCHA": "This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.",
+          "reCAPTCHA": "This site is protected by reCAPTCHA and",
           "requiredFields": "* - required fields",
           "submitButton": "Send Message"
         }

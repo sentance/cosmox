@@ -78,7 +78,7 @@ const SectionFour = () => {
     }
   };
   const sliderSettings = {
-    showArrows: false, // Hide navigation arrows
+    showArrows: true, // Hide navigation arrows
     showStatus: false, // Hide the current slide status (e.g., 1/4)
     showIndicators: false, // Hide the dots at the bottom of the carousel
     showThumbs: false, // Hide the thumbnail images
@@ -190,7 +190,7 @@ const SectionFour = () => {
             <div className="text">
               <p>{t("sectionFour.contactForm.reCAPTCHA")}</p>
               <p>
-                and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a> and{" "}
+                <a href="https://policies.google.com/privacy">Google Privacy Policy</a> and{" "}
                 <a href="https://policies.google.com/terms">Terms of Serviceapply</a> .
               </p>
               <p />

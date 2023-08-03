@@ -1132,7 +1132,11 @@ th {
 }
 .language-container {
   display: flex;
+  font-family: Gilroy-Bold;
   align-items: center;
+}
+.language-container:hover {
+  background-color: #333131;
 }
 #mobile-menu ul {
   padding-left: 0;
@@ -1161,6 +1165,19 @@ th {
 }
 .mobile-menu-item {
   padding-bottom: 10px;
+}
+.no-data-text {
+  text-align: center;
+  padding: 20px;
+  color: #000;
+    font-family: DM Sans;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 1.68px;
+    text-transform: uppercase;
+
 }
 .bottomBlock {
   position: absolute;
@@ -1330,6 +1347,12 @@ header .container .block .left nav .button-dropdown .dropdown-toggle {
   padding: 8px 24px;
   font-family: Gilroy-Bold;
 }
+header .container .block .left nav .button-dropdown .dropdown-toggle:hover {
+  color: #878a91;
+}
+header .container .block .left nav .button-dropdown .dropdown-toggle:active {
+  color: #878a91;
+}
 header .container .block .left nav .button-dropdown ul {
   border-top: 2px solid rgb(255, 255, 255);
   padding-bottom: 10px;
@@ -1359,6 +1382,12 @@ header .container .block .left nav .button-dropdown ul li a {
   padding: 5px 8px;
   width: 150px;
   background: #000;
+}
+header .container .block .left nav .button-dropdown ul li a:hover {
+  color: #878a91;
+}
+.text-black {
+  color: #878a91;
 }
 header .container .block .right {
   display: flex;
@@ -1392,6 +1421,7 @@ header .container .block .right .button-dropdown ul.active {
 header .container .block .right .button-dropdown ul li {
   width: 134px;
   display: flex;
+  font-family: Gilroy-Bold;
 }
 header .container .block .right .button-dropdown ul li:last-child a {
   padding-bottom: 13px;
@@ -1404,6 +1434,9 @@ header .container .block .right .button-dropdown ul li a {
   width: 150px;
   background: #000;
 }
+header .container .block .right .button-dropdown ul li a:hover {
+ background-color: #333131;
+}
 header .container .block .right .login a {
   color: #fff;
   font-family: Gilroy-Bold;
@@ -1413,6 +1446,7 @@ header .container .block .right .login a {
   line-height: 24px;
   padding: 12px 24.42px 12px 24px;
 }
+
 header .container .block .right .join a {
   color: #000;
   text-align: center;
@@ -1553,7 +1587,7 @@ header .container .block .right .join a:hover {
   font-weight: 700;
   line-height: 24px;
   margin-left: 12px;
-  width: 150px;
+  width: 200px;
   height: 57px;
   letter-spacing: 1.12px;
   text-transform: uppercase;
@@ -1561,6 +1595,10 @@ header .container .block .right .join a:hover {
   border-radius: 100px;
   background: #fff!important;
   box-shadow: 0px 0px 0px 9.955300331115723px rgba(122,164,132,0.01);
+}
+.sec1 .container .content form button:hover {
+  background-color: #000!important;
+  color: #fff
 }
 
 
@@ -2238,9 +2276,14 @@ header .container .block .right .join a:hover {
 .pulse-button:after{
     animation: pulse 2s 1s ease-out infinite;
 }
+.pulse-button:hover {
+  background-color: #000;
+  color: #fff
+}
 .button-container .pulse-button {
 height: 60px;
   line-height: 24px;
+  width: 150px;
 }
 @keyframes pulse{
     100%{
@@ -2714,6 +2757,12 @@ footer .container .f2 {
     align-items: center; /* Center items vertically */
     justify-content: center; /* Center items horizontally */
   }
+  .language-container a:hover {
+    background-color: #ddd2d2;
+  }
+  .language-changer {
+    background-color: #ddd2d2;
+  }
   #burger-menu {
     display: block;
     top: 3px;
@@ -3118,7 +3167,7 @@ footer .container .f2 {
     text-align: center;
     border-radius: 100px;
     gap: 48px;
-    background: #000;
+    /* background: #000; */
     padding: 56px 23px;
     margin: 0 auto;
     max-width: 180px;

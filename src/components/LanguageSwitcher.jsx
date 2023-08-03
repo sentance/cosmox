@@ -23,7 +23,7 @@ const LanguageSwitcher = () => {
   return (
     <div className="button-dropdown">
       <div className="language-container">
-        <a href="#" onClick={() => changeLanguage("en")}>
+        <a href="#" className="language-changer" onClick={() => changeLanguage("en")}>
           English
           <BritishFlag />
         </a>
@@ -37,7 +37,7 @@ const LanguageSwitcher = () => {
         style={{ display: languageDropdownVisible ? "block" : "none" }}
         onClick={closeLanguageDropdown}
       >
-        <li>
+        <li className="language-changer">
           <a href="#" onClick={() => changeLanguage("pl")}>
             Polish
             <span style={{ paddingLeft: 5 }}>

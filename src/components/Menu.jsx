@@ -61,7 +61,11 @@ const Menu = ({ handleDropdownToggle, isDropdownVisible }) => {
               </li>
             </ul>
             <div className="button-dropdown">
-              <button className="dropdown-toggle" ref={menuRef} onMouseEnter={toggleContactDropdown}>
+              <button
+                className={`dropdown-toggle ${contactDropdownVisible ? "text-black" : ""}`}
+                ref={menuRef}
+                onMouseEnter={toggleContactDropdown}
+              >
                 {t("menu.links.contact")}
               </button>
               <ul className="dropdown-menu" style={{ display: contactDropdownVisible ? "block" : "none" }}>

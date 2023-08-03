@@ -37,7 +37,7 @@ const Tabs = ({ activeTab, filterText }) => {
   const renderTabContent = (tab, data) => {
     if (data.length === 0) {
       // Render "NO DATA FOUND" message when data is empty
-      return <div style={{ textAlign: "center", padding: "20px" }}>NO DATA FOUND</div>;
+      return <div className="no-data-text">NO DATA FOUND</div>;
     }
     return (
       <div className={`tabs__content ${activeTab === tab ? "active" : ""}`}>
