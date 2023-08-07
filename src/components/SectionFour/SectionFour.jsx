@@ -70,7 +70,7 @@ const SectionFour = () => {
     showIndicators: false, // Hide the dots at the bottom of the carousel
     showThumbs: false, // Hide the thumbnail images
     infiniteLoop: true,
-    autoPlay: true,
+    autoPlay: false,
     interval: 2000,
     swipeable: true,
     emulateTouch: true, // Enable mouse swiping

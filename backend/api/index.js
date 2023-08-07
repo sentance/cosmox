@@ -39,7 +39,7 @@ app.get("/api", (req, res) => {
   res.send("Hey this is my API running 🥳");
 });
 
-app.post("/api/email", async (req, res) => {
+app.post("/api", async (req, res) => {
   const { email, name, lastName, phone, message, captchaResponse } = req.body;
 
   // Check if captchaResponse exists and verify the captcha if available

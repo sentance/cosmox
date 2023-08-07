@@ -18,13 +18,19 @@ const Footer = () => {
           </a>
           <div className="icons">
             <div className="icon">
-              <Twitter />
+              <a href="https://twitter.com/cosmos?lang=cs">
+                <Twitter />{" "}
+              </a>
             </div>
             <div className="icon">
-              <Instagram />
+              <a href="https://www.instagram.com/cosmos_blockchain/?hl=cs">
+                <Instagram />{" "}
+              </a>{" "}
             </div>
             <div className="icon">
-              <Telegram />
+              <a href="https://t.me/cosmosproject">
+                <Telegram />{" "}
+              </a>
             </div>
           </div>
           <p>{t("footer.rightsReserved")}</p>

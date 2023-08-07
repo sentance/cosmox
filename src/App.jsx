@@ -28,9 +28,7 @@ function App() {
           <CurrencyTab />
           <ThirdScreen />
           <SectionFour />
-          <section className="sec5">
-            <div className="container"></div>
-          </section>
+
           <Footer />
         </div>
       </div>

@@ -70,16 +70,18 @@ const Menu = ({ handleDropdownToggle, isDropdownVisible }) => {
               </button>
               <ul className="dropdown-menu" style={{ display: contactDropdownVisible ? "block" : "none" }}>
                 <li>
-                  <a href="#">{t("menu.links.facebook")}</a>
+                  <a href="https://www.facebook.com/Cosmos.Network.Atom/">{t("menu.links.facebook")}</a>
                 </li>
                 <li>
-                  <a href="#">{t("menu.links.instagram")}</a>
+                  <a href="https://www.instagram.com/cosmos_blockchain/?hl=cs">{t("menu.links.instagram")}</a>
                 </li>
                 <li>
-                  <a href="#">{t("menu.links.tiktok")}</a>
+                  <a href="https://www.tiktok.com/discover/cosmos-crypto-prediction">{t("menu.links.tiktok")}</a>
                 </li>
                 <li>
-                  <a href="#">{t("menu.links.linkedin")}</a>
+                  <a href="https://www.linkedin.com/company/cosmoshub/?originalSubdomain=ee">
+                    {t("menu.links.linkedin")}
+                  </a>
                 </li>
               </ul>
             </div>

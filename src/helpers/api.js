@@ -3,7 +3,7 @@ import axios from "axios";
 // Function to send an email
 export const sendEmail = async (formData) => {
   try {
-    const response = await axios.post(`/api/email`, formData);
+    const response = await axios.post(`https://cosmox-api.vercel.app/api`, formData);
     return response.data;
   } catch (error) {
     throw new Error(error.response && error.response.data.message ? error.response.data.message : error.message);
