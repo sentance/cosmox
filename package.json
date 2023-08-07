@@ -1,6 +1,6 @@
 {
   "name": "ob-cosmox",
-  "proxy": "https://cosmox-axv51fk6i-sentance22-gmailcom.vercel.app:4000",
+  "proxy": "https://cosmox-api.vercel.app/api",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
