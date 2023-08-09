@@ -1136,8 +1136,7 @@ th {
   align-items: center;
 }
 .language-container:hover {
-  background-color: #333131;
-  padding: 5px;
+  color: #878a91;
 }
 #mobile-menu ul {
   padding-left: 0;
@@ -1436,7 +1435,7 @@ header .container .block .right .button-dropdown ul li a {
   background: #000;
 }
 header .container .block .right .button-dropdown ul li a:hover {
- background-color: #333131;
+  color: #878a91;
 }
 header .container .block .right .login a {
   color: #fff;
