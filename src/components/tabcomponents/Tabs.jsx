@@ -85,7 +85,7 @@ const Tabs = ({ activeTab, filterText }) => {
                 {cryptoData.price_change_percentage_24h.toFixed(2)}% <span>(24H CHANGE)</span>
               </div>
               <div className="trade">
-                <a href={tradeLink} target="_blank" rel="noopener noreferrer">
+                <a href={tradeLink} target="_blank" className="pulse-button" rel="noopener noreferrer">
                   TRADE
                 </a>
               </div>

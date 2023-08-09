@@ -68,18 +68,28 @@ const Menu = ({ handleDropdownToggle, isDropdownVisible }) => {
               >
                 {t("menu.links.contact")}
               </button>
-              <ul className="dropdown-menu" style={{ display: contactDropdownVisible ? "block" : "none" }}>
+              <ul
+                onMouseLeave={toggleContactDropdown}
+                className="dropdown-menu"
+                style={{ display: contactDropdownVisible ? "block" : "none" }}
+              >
                 <li>
-                  <a href="https://www.facebook.com/Cosmos.Network.Atom/">{t("menu.links.facebook")}</a>
+                  <a target="_index" href="https://www.facebook.com/Cosmos.Network.Atom/">
+                    {t("menu.links.facebook")}
+                  </a>
                 </li>
                 <li>
-                  <a href="https://www.instagram.com/cosmos_blockchain/?hl=cs">{t("menu.links.instagram")}</a>
+                  <a target="_index" href="https://www.instagram.com/cosmos_blockchain/?hl=cs">
+                    {t("menu.links.instagram")}
+                  </a>
                 </li>
                 <li>
-                  <a href="https://www.tiktok.com/discover/cosmos-crypto-prediction">{t("menu.links.tiktok")}</a>
+                  <a target="_index" href="https://www.tiktok.com/discover/cosmos-crypto-prediction">
+                    {t("menu.links.tiktok")}
+                  </a>
                 </li>
                 <li>
-                  <a href="https://www.linkedin.com/company/cosmoshub/?originalSubdomain=ee">
+                  <a target="_index" href="https://www.linkedin.com/company/cosmoshub/?originalSubdomain=ee">
                     {t("menu.links.linkedin")}
                   </a>
                 </li>

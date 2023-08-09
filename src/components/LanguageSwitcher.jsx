@@ -36,6 +36,7 @@ const LanguageSwitcher = () => {
         className="dropdown-menu"
         style={{ display: languageDropdownVisible ? "block" : "none" }}
         onClick={closeLanguageDropdown}
+        onMouseLeave={closeLanguageDropdown}
       >
         <li className="language-changer">
           <a href="#" onClick={() => changeLanguage("pl")}>

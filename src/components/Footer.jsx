@@ -18,17 +18,17 @@ const Footer = () => {
           </a>
           <div className="icons">
             <div className="icon">
-              <a href="https://twitter.com/cosmos?lang=cs">
+              <a target="_index" href="https://twitter.com/cosmos?lang=cs">
                 <Twitter />{" "}
               </a>
             </div>
             <div className="icon">
-              <a href="https://www.instagram.com/cosmos_blockchain/?hl=cs">
+              <a target="_index" href="https://www.instagram.com/cosmos_blockchain/?hl=cs">
                 <Instagram />{" "}
               </a>{" "}
             </div>
             <div className="icon">
-              <a href="https://t.me/cosmosproject">
+              <a target="_index" href="https://t.me/cosmosproject">
                 <Telegram />{" "}
               </a>
             </div>

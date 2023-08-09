@@ -1817,13 +1817,11 @@ header .container .block .right .join a:hover {
   letter-spacing: 0.96px;
   text-transform: uppercase;
 }
-.sec2 .container .tabs .tabs__content .item .trade a:hover {
+/* .sec2 .container .tabs .tabs__content .item .trade a:hover {
   transform: scale(1.1);
-  /* Add a slight change in background color on hover */
   background-color: #c2baba;
-  /* Add a slight change in box-shadow on hover */
   box-shadow: 0px 0px 0px 9.955300331115723px rgba(122, 164, 132, 0.05);
-}
+} */
 .sec3 {
   background: #000;
   position: relative;
@@ -2251,7 +2249,7 @@ header .container .block .right .join a:hover {
   display: grid;
   place-items: center;
   color: #000;
-  font-family: Gilroy-Bold;
+  font-family: Gilroy-Bold!important;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -2273,18 +2271,25 @@ header .container .block .right .join a:hover {
 .pulse-button:before{
     animation: pulse 2s ease-out infinite;
 }
-.pulse-button:after{
-    animation: pulse 2s 1s ease-out infinite;
-}
-.pulse-button:hover {
-  background-color: #000;
-  color: #fff
-}
+
 .button-container .pulse-button {
 height: 60px;
   line-height: 24px;
   width: 150px;
 }
+.trade .pulse-button {
+  animation: pulse 2s ease-out infinite;
+}
+
+.trade .pulse-button:before,
+.trade .pulse-button:after{
+    background-color: #ffffff;
+}
+.trade .pulse-button:before:hover,
+.trade .pulse-button:after:hover{
+    background-color: #ffffff;
+}
+
 @keyframes pulse{
     100%{
         transform: scale(1.5);
