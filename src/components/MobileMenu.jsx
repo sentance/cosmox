@@ -1,10 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
-import { BritishFlag } from "../assets/img/Images";
 import { useTranslation } from "react-i18next"; // Import the useTranslation hook
 import LanguageSwitcher from "./LanguageSwitcher";
 
 const MobileMenu = ({ isDropdownVisible, handleDropdownToggle }) => {
-  const { t } = useTranslation(); // Use the useTranslation hook to get access to translations
+  const { t } = useTranslation();
 
   const [contactDropdownVisible, setContactDropdownVisible] = useState(false);
   const [languageDropdownVisible, setLanguageDropdownVisible] = useState(false);
@@ -17,17 +16,15 @@ const MobileMenu = ({ isDropdownVisible, handleDropdownToggle }) => {
     setLanguageDropdownVisible(!languageDropdownVisible);
   };
 
-  const menuRef = useRef(null); // Create a ref for the menu
+  const menuRef = useRef(null);
 
   useEffect(() => {
-    // Add event listener for clicks on the entire document
     const handleDocumentClick = (event) => {
       if (
         menuRef.current &&
         !menuRef.current.contains(event.target) &&
         !event.target.classList.contains("dropdown-toggle")
       ) {
-        // If the click is outside the menu and the button, close the menu
         setContactDropdownVisible(false);
         setLanguageDropdownVisible(false);
       }
@@ -36,10 +33,22 @@ const MobileMenu = ({ isDropdownVisible, handleDropdownToggle }) => {
     document.addEventListener("click", handleDocumentClick);
 
     return () => {
-      // Clean up the event listener when the component is unmounted
       document.removeEventListener("click", handleDocumentClick);
     };
   }, []);
+
+  const closeMobileMenu = () => {
+    if (isDropdownVisible) {
+      handleDropdownToggle();
+    }
+  };
+
+  const scrollToContact = () => {
+    document.querySelector("#contactformMobile").scrollIntoView({
+      behavior: "smooth",
+    });
+    closeMobileMenu(); // Close the mobile menu after clicking on "Contact"
+  };
 
   return (
     <>
@@ -52,33 +61,15 @@ const MobileMenu = ({ isDropdownVisible, handleDropdownToggle }) => {
           <ul>
             {t("mobileMenu.menuItems", { returnObjects: true }).map((item, index) => (
               <li className="mobile-menu-item" key={index}>
-                <a href={item.href} onClick={handleDropdownToggle}>
+                <a href={item.href} onClick={item.label === "Contact" ? scrollToContact : closeMobileMenu}>
                   <span>{item.label}</span>
                 </a>
               </li>
             ))}
             <div className="button-dropdown mobile-menu-item">
-              <button className="dropdown-toggle" ref={menuRef} onClick={toggleContactDropdown}>
+              <button className="dropdown-toggle" onClick={scrollToContact}>
                 {t("mobileMenu.contactButton")}
               </button>
-              <ul
-                className="dropdown-menu"
-                id="dropdown-menu-mobile"
-                style={{ display: contactDropdownVisible ? "block" : "none" }}
-              >
-                <li>
-                  <a href="#">Facebook</a>
-                </li>
-                <li>
-                  <a href="#">Instagram</a>
-                </li>
-                <li>
-                  <a href="#">TikTok</a>
-                </li>
-                <li>
-                  <a href="#">LinkedIn</a>
-                </li>
-              </ul>
             </div>
           </ul>
           <div className="bottomBlock">
