@@ -2252,7 +2252,7 @@ header .container .block .right .join a:hover {
   background: #fff;
   position: relative;
   margin: auto;
-  border-radius: 25px;
+  border-radius: 30px;
   display: grid;
   place-items: center;
   color: #000;
@@ -2804,6 +2804,15 @@ footer .container .f2 {
   }
   #mobile-menu ul {
     margin-top: 25%;
+}
+#mobile-menu .button-dropdown ul {
+  padding-bottom: 10px;
+  display: none;
+  position: absolute;
+  left: 115px;
+  margin: 0;
+  margin-top: 3px;
+  text-align: center;
 }
 }
 @media (min-width: 576px) and (max-width: 767px) {
