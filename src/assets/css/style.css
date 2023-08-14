@@ -2471,10 +2471,10 @@ footer .container .f2 {
   display: none;
   position: absolute;
   left: 0;
-  padding-right: 240px;
   margin: 0;
   margin-top: 3px;
-  text-align: left;
+  text-align: center;
+  justify-content: center;
 }
 #dropdown-menu-mobile::before {
   content: "";
@@ -2800,7 +2800,8 @@ footer .container .f2 {
 }
 @media (min-width: 767px) and (max-width: 990px) { 
   .language-container {
-    display: block;
+    display: flex;
+    justify-content: center;
   }
   #mobile-menu ul {
     margin-top: 25%;
@@ -2809,7 +2810,6 @@ footer .container .f2 {
   padding-bottom: 10px;
   display: none;
   position: absolute;
-  left: 115px;
   margin: 0;
   margin-top: 3px;
   text-align: center;
@@ -2828,9 +2828,9 @@ footer .container .f2 {
     align-items: center; /* Center items vertically */
     justify-content: center; /* Center items horizontally */
   }
-  .language-container a:hover {
+  /* .language-container a:hover {
     background-color: #ddd2d2;
-  }
+  } */
   /* .language-changer {
     background-color: #ddd2d2;
   } */
@@ -3064,7 +3064,7 @@ footer .container .f2 {
     padding-bottom: 10px;
     display: none;
     position: absolute;
-    left: 0;
+    left: 15px;
     padding-right: 0px;
     margin: 0;
     margin-top: 3px;
