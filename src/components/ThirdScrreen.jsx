@@ -26,9 +26,7 @@ const ThirdScreen = () => {
           ))}
         </div>
         <div className="button-container">
-          <div className="pulse-button">
-            <a href="#contactform">{t("thirdScreen.buttonText")}</a>
-          </div>
+          <button className="pulse-button">{t("thirdScreen.buttonText")}</button>
         </div>
       </div>
     </section>

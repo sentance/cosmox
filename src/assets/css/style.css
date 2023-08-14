@@ -2315,8 +2315,17 @@ header .container .block .right .join a:hover {
 
 .pulse-button-trade:hover{
   cursor: pointer;
+  background-color: #101010!important;
+  color: #fff;
 }
-
+.button-container .pulse-button:hover {
+  background-color: #101010!important;
+  color: #fff;
+}
+.right .pulse-button:hover {
+  background-color: #101010!important;
+  color: #fff;
+}
 .button-container .pulse-button {
 height: 60px;
   line-height: 24px;

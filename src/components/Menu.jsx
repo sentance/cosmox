@@ -102,9 +102,9 @@ const Menu = ({ handleDropdownToggle, isDropdownVisible }) => {
           <div className="login">
             <a href="#">{t("menu.links.login")}</a>
           </div>
-          <div className="pulse-button">
+          <button className="pulse-button">
             <a href="#">{t("menu.links.joinUs")}</a>
-          </div>
+          </button>
         </div>
         <div className="menu">
           <button id="burger-menu" onClick={handleDropdownToggle}>
