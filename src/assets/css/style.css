@@ -2317,11 +2317,11 @@ header .container .block .right .join a:hover {
   cursor: pointer;
   background-color: #101010!important;
   color: #fff;
+  border-radius: 18px!important;
 }
 .button-container .pulse-button:hover {
   background-color: #101010!important;
   color: #fff;
-  border-radius: 18px;
 }
 .right .pulse-button:hover {
   background-color: #101010!important;
