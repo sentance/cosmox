@@ -5,14 +5,14 @@ import { Apple, Gray, Pp, Stripe } from "../../assets/img/Images";
 import { sendEmail } from "../../helpers/api";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { CssTextField, CssTextArea, WhiteInputLabel } from "./SectionFourStyles";
+import { CssTextField, CssTextArea, WhiteInputLabel, BottomInputLabel } from "./SectionFourStyles";
 import ReCAPTCHA from "react-google-recaptcha";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const SectionFour = () => {
   const { t } = useTranslation(); // Use the useTranslation hook to get access to translations
   const recaptchaRef = useRef(null); // Create a ref for the Recaptcha component
-
+  const [characterCount, setCharacterCount] = useState(0); // Initialize character count
   const [formData, setFormData] = useState({
     name: "",
     lastName: "",
@@ -24,10 +24,13 @@ const SectionFour = () => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
+    // Truncate the input value to 100 characters
+    const truncatedValue = value.substring(0, 100);
     setFormData((prevData) => ({
       ...prevData,
-      [name]: value,
+      [name]: truncatedValue,
     }));
+    setCharacterCount(truncatedValue.length);
   };
 
   const handleSubmit = async (event) => {
@@ -171,9 +174,11 @@ const SectionFour = () => {
                 id="custom-css-outlined-input"
                 value={formData.message}
                 onChange={handleChange}
+                multiline
                 name="message"
                 required
               />
+              <span className="symbol-counter">{characterCount}/100</span>
               <ReCAPTCHA
                 ref={recaptchaRef}
                 sitekey="6LfCNXonAAAAAPBXF6QJxGb4PXWRDSMrPpKQiDO5"

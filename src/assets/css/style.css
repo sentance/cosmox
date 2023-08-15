@@ -335,6 +335,13 @@ th {
   opacity: 1;
   visibility: visible;
 }
+.symbol-counter {
+  position: absolute;
+  bottom: 283px;
+  right: 67px;
+  font-size: 12px;
+  color: #565555;
+}
 .md-content {
   color: #fff;
   background: black;
@@ -2500,6 +2507,9 @@ footer .container .f2 {
     display: block; /* Show the static image on mobile */
     /* Add the styles for the static image here, e.g. background-image, width, height, etc. */
   }
+  .symbol-counter {
+    bottom: 295px;
+  }
 }
 #lang-menu-mobile {
   padding-left: 120px!important;
@@ -2529,6 +2539,11 @@ footer .container .f2 {
   padding: 5px 8px;
   width: 150px;
   background: #000;
+}
+@media (min-width: 620px) and (max-width: 770px) {
+  .symbol-counter {
+    right: 21%;
+  }
 }
 @media (min-width: 768px) {
   .menu {
@@ -2587,6 +2602,9 @@ footer .container .f2 {
   }
   .container {
     padding: 0px 20px;
+  }
+  .symbol-counter {
+    right: 23%;
   }
   .menu {
     display: block;

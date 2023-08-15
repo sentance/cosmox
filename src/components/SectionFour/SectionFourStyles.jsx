@@ -1,5 +1,4 @@
-import React from "react";
-import { TextField, FormHelperText } from "@mui/material";
+import { TextField } from "@mui/material";
 import styled from "@emotion/styled";
 
 export const CssTextField = styled(TextField)({
@@ -59,5 +58,8 @@ export const CssTextArea = styled(TextField)({
 });
 
 export const WhiteInputLabel = styled("label")`
+  color: black;
+`;
+export const BottomInputLabel = styled("label")`
   color: black;
 `;
