@@ -6,6 +6,7 @@
   "scripts": {
     "start": "vercel dev",
     "deploy": "vercel deploy --prod",
+    "dev": "node api/index.js",
     "vercel-build": "echo hello"
   },
   "keywords": [],
@@ -16,6 +17,7 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "mailgun-js": "^0.22.0",
+    "nodemailer": "^6.9.4",
     "vercel": "^31.2.2"
   }
 }
