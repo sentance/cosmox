@@ -2,13 +2,14 @@ const express = require("express");
 const dotenv = require("dotenv");
 const nodemailer = require("nodemailer"); // Add this line to import nodemailer
 const axios = require("axios");
+const cors = require("cors"); // Import the cors package
 
 dotenv.config();
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.use(cors());
 // Function to verify reCAPTCHA response
 const verifyCaptcha = async (captchaResponse) => {
   const secretKey = "6LfCNXonAAAAAF9sJKBGqJiopy1WttNd2PkrEJHY"; // Replace with your secret key
