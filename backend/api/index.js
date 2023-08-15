@@ -35,6 +35,13 @@ app.get("/api", (req, res) => {
 });
 
 app.post("/api", async (req, res) => {
+  res.setHeader("Access-Control-Allow-Credentials", true);
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET,OPTIONS,POST");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+  );
   const { email, name, lastName, phone, message, captchaResponse } = req.body;
 
   // Check if captchaResponse exists and verify the captcha if available
@@ -69,7 +76,7 @@ app.post("/api", async (req, res) => {
 
   // Email sending options
   const mailOptions = {
-    from: "CosmosX <postmaster@cosmosx360.com>",
+    from: "CosmoX <postmaster@cosmosx360.com>",
     to: "office@croney.io",
     subject: "Contact Form Submission",
     text: emailMessage,
