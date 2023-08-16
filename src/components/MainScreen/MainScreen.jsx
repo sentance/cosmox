@@ -5,11 +5,13 @@ import { useTranslation } from "react-i18next"; // Import the useTranslation hoo
 import { ArrowDown } from "../../assets/img/Images";
 import { CssTextField, WhiteInputLabel } from "./MainScreenStyles";
 import { sendEmail } from "../../helpers/api";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const MainScreen = () => {
   const { t } = useTranslation(); // Use the useTranslation hook to get access to translations
+  const [buttonDisabled, setButtonDisabled] = useState(false);
+
   const [formData, setFormData] = useState({
     email: "",
   });
@@ -24,7 +26,11 @@ const MainScreen = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+    buttonDisableHandler();
+    setFormData({
+      email: "",
+      "g-recaptcha-response": "",
+    });
     try {
       // Use the sendEmail function here
       const data = await sendEmail(formData);
@@ -33,6 +39,13 @@ const MainScreen = () => {
     } catch (error) {
       toast.error(error.message);
     }
+  };
+
+  const buttonDisableHandler = () => {
+    setButtonDisabled(true);
+    setTimeout(() => {
+      setButtonDisabled(false);
+    }, 10000);
   };
 
   const handleArrowClick = (event) => {
@@ -51,7 +64,6 @@ const MainScreen = () => {
           <h2>{t("mainScreen.title")}</h2>
           <h1>{t("mainScreen.subTitle")}</h1>
           <p>{t("mainScreen.description")}</p>
-          <ToastContainer position="top-center" limit={1} />
           <form onSubmit={handleSubmit}>
             <CssTextField
               label={<WhiteInputLabel>{t("mainScreen.emailLabel")}</WhiteInputLabel>}
@@ -61,7 +73,7 @@ const MainScreen = () => {
               type="email"
               required
             />
-            <button className="pulse-button" type="submit">
+            <button disabled={buttonDisabled} className="pulse-button" type="submit">
               {t("mainScreen.joinUsButton")}
             </button>
           </form>

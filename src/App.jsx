@@ -10,6 +10,7 @@ import SectionFour from "./components/SectionFour/SectionFour";
 import Footer from "./components/Footer";
 import { I18nextProvider } from "react-i18next";
 import i18n from "./i18n";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
@@ -18,6 +19,7 @@ function App() {
   };
   return (
     <I18nextProvider i18n={i18n}>
+      <ToastContainer position="top-center" limit={1} />
       <div className="App">
         <div className="wrapper">
           <header>

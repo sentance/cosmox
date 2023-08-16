@@ -8,6 +8,7 @@ export const CssTextField = styled(TextField)({
   "& .MuiInput-underline:after": {
     borderBottom: "none", // Remove the underline after
   },
+  "& .MuiFormLabel-asterisk": { color: "#FF0000" },
   "& .MuiOutlinedInput-root": {
     "& fieldset": {
       borderColor: "transparent", // Set the border color to transparent

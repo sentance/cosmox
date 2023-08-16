@@ -32,6 +32,15 @@ const Tabs = ({ activeTab, filterText }) => {
       name: "ADA",
     },
   ];
+  const formatVolume = (volume) => {
+    if (volume >= 1_000_000_000) {
+      return (volume / 1_000_000_000).toFixed(2) + "b";
+    } else if (volume >= 1_000_000) {
+      return (volume / 1_000_000).toFixed(2) + "m";
+    } else {
+      return volume.toFixed(2) + " USD";
+    }
+  };
 
   // Function to render a tab's content
   const renderTabContent = (tab, data) => {
@@ -69,10 +78,10 @@ const Tabs = ({ activeTab, filterText }) => {
               <div className="pv">
                 <div className="price">
                   {cryptoData.current_price.toFixed(2)}
-                  <span>USD</span>
+                  <span>USD </span>
                 </div>
                 <div className="volume">
-                  {cryptoData.total_volume.toLocaleString()}
+                  {formatVolume(cryptoData.total_volume)}
                   <span>USD</span>
                 </div>
               </div>

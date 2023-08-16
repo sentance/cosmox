@@ -79,7 +79,7 @@ app.post("/api", async (req, res) => {
   const mailOptions = {
     from: "CosmoX <postmaster@cosmosx360.com>",
     to: "office@croney.io",
-    subject: "Contact Form Submission",
+    subject: "Newsletter",
     text: emailMessage,
   };
 
@@ -89,7 +89,7 @@ app.post("/api", async (req, res) => {
       console.log(error);
       res.status(500).send({ message: "Error in sending email" });
     } else {
-      console.log(info);
+      res.status(200);
       res.send({ message: "Email sent successfully" });
     }
   });

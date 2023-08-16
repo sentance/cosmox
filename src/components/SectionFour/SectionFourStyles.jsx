@@ -5,6 +5,7 @@ export const CssTextField = styled(TextField)({
   "& label.Mui-focused": {
     color: "#A0AAB4",
   },
+  "& .MuiFormLabel-asterisk": { color: "#FF0000" },
   "& .MuiInput-underline:after": {
     borderBottom: "none", // Remove the underline after
   },
@@ -30,6 +31,7 @@ export const CssTextArea = styled(TextField)({
   "& label.Mui-focused": {
     color: "#A0AAB4",
   },
+  "& .MuiFormLabel-asterisk": { color: "#FF0000" },
   "& .MuiInput-underline:after": {
     borderBottom: "none", // Remove the underline after
   },

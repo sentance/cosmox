@@ -2503,6 +2503,9 @@ footer .container .f2 {
   .items {
     display: none; /* Hide the Carousel on mobile */
   }
+  header .container .block .left {
+    margin-left: 10px;
+}
   .static-image {
     display: block; /* Show the static image on mobile */
     /* Add the styles for the static image here, e.g. background-image, width, height, etc. */

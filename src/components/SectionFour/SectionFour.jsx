@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next"; // Import the useTranslation hoo
 import { Carousel } from "react-responsive-carousel";
 import { Apple, Gray, Pp, Stripe } from "../../assets/img/Images";
 import { sendEmail } from "../../helpers/api";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { CssTextField, CssTextArea, WhiteInputLabel, BottomInputLabel } from "./SectionFourStyles";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -13,6 +13,8 @@ const SectionFour = () => {
   const { t } = useTranslation(); // Use the useTranslation hook to get access to translations
   const recaptchaRef = useRef(null); // Create a ref for the Recaptcha component
   const [characterCount, setCharacterCount] = useState(0); // Initialize character count
+  const [buttonDisabled, setButtonDisabled] = useState(false);
+
   const [formData, setFormData] = useState({
     name: "",
     lastName: "",
@@ -33,8 +35,16 @@ const SectionFour = () => {
     setCharacterCount(truncatedValue.length);
   };
 
+  const buttonDisableHandler = () => {
+    setButtonDisabled(true);
+    setTimeout(() => {
+      setButtonDisabled(false);
+    }, 10000);
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
+    buttonDisableHandler();
 
     const captchaValue = recaptchaRef.current.getValue();
     if (!captchaValue) {
@@ -42,11 +52,19 @@ const SectionFour = () => {
       return;
     }
 
+    setFormData({
+      name: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      message: "",
+      "g-recaptcha-response": "",
+    });
+
     // Send the data to Mailgun using an HTTP POST request
     try {
-      const message = await sendEmail(formData);
-
-      toast.success(message.data);
+      const data = await sendEmail(formData);
+      toast.success(data.message);
     } catch (error) {
       toast.error(error.response && error.response.data.message ? error.response.data.message : error.message);
     }
@@ -122,7 +140,6 @@ const SectionFour = () => {
           </div>
         </div>
         <div className="right" id="contactformMobile">
-          <ToastContainer position="top-center" limit={1} />
           <form onSubmit={handleSubmit}>
             <div className="title">
               <h2>{t("sectionFour.contactForm.title")}</h2>
@@ -197,7 +214,9 @@ const SectionFour = () => {
               </span>
             </div>
             <div className="but">
-              <button type="submit">{t("sectionFour.contactForm.submitButton")}</button>{" "}
+              <button disabled={buttonDisabled} type="submit">
+                {t("sectionFour.contactForm.submitButton")}
+              </button>{" "}
             </div>
           </form>
         </div>
